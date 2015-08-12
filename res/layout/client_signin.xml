@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/RelativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Client : Registration"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <LinearLayout
+            android:id="@+id/parent_linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/uname_block"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:weightSum="1" >
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="80dp"
+            android:layout_height="34dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:text="ClientName" />
+        
+         <EditText
+                android:id="@+id/userNameText"
+                android:layout_width="fill_parent"
+                android:layout_height="34dp"
+                android:layout_above="@+id/mobileText"
+                android:layout_marginLeft="19dp"
+                android:layout_toEndOf="@+id/userName"
+                android:gravity="center"
+                android:text="EnterClientName"/>
+       
+        <TextView
+            android:id="@+id/mobile"
+            android:layout_width="50dp"
+            android:layout_height="34dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/userName"
+            android:layout_toStartOf="@+id/mobileText"
+            android:gravity="center"
+            android:text="Password" />
+
+        <EditText
+            android:id="@+id/mobileText"
+            android:layout_width="fill_parent"
+            android:layout_height="34dp"
+            android:layout_alignStart="@+id/userNameText"
+            android:layout_below="@+id/userName"
+            android:layout_toEndOf="@+id/userName"
+            android:layout_weight="1.07"
+            android:gravity="center"
+            android:text="Enter Password" />
+
+     
+    </RelativeLayout>
+
+  
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="SignIn" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button1"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="56dp"
+        android:text="SignUp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="ForgetPassword" />
+
+
+
+</RelativeLayout>
