@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/regretView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="26dp"
+        android:text="REGRET SCREEN"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/regretView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/regretView1"
+        android:layout_marginTop="48dp"
+        android:text="Please Provide Your Feedback To Us And What Will Make You To Use &amp; Votes" />
+
+    <EditText
+        android:id="@+id/regretedit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/regretView2"
+        android:layout_marginTop="40dp"
+        android:text="@string/regret_feedback" />
+
+    <TextView
+        android:id="@+id/regretView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/regretedit1"
+        android:layout_marginTop="93dp"
+        android:text="You Can Reach To Us At feedback@votes.com"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/regret_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/regretView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="DONE" />
+
+</RelativeLayout>

@@ -15,6 +15,7 @@
     <string name="lbl_enter_credite"></string>
     <string name="lbl_cvv">CVV</string>
     <string name="lbl_enter_cvv"></string>
+    <string name="country">COUNTRY</string>
     <string name="insight">INSIGHT</string>
     <string name="profile">Customer Profile</string>  
     <string name="profile_name1">Enter Your Name</string>    
@@ -26,4 +27,7 @@
     <string name="detail">DETAILS</string>
     <string name="profile_done">DONE</string>
     <string name="profile_back">BACK</string>
+    <string name="forget_login">Login Name</string>
+    <string name="forget_email">Enter Email</string>
+    <string name="regret_feedback">Enter Your FeedBack</string>
 </resources>
