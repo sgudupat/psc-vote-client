@@ -1,4 +1,4 @@
-package com.psc.client.vote;
+package com.client.vote;
 
 import android.app.Activity;
 import android.os.Bundle;
