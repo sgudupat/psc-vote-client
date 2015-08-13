@@ -2,17 +2,17 @@
 <resources>
     <string name="app_name">vote_client</string>
     <string name="lbl_username">Login Name</string>
-     <string name="lbl_enter_username">UserName</string>
-      <string name="lbl_password">Password</string>
-     <string name="lbl_enter_password">Password</string>
-      <string name="lbl_terms">TermsandCondition</string>
-       <string name="agree">Iagree</string>
-        <string name="lbl_email">Email</string>
-     <string name="lbl_enter_email">email</string>
-       <string name="lbl_credit">Credit</string>
-     <string name="lbl_enter_credit"></string>
-       <string name="lbl_credite">Expiry</string>
-     <string name="lbl_enter_credite"></string>
-      <string name="lbl_cvv">CVV</string>
-     <string name="lbl_enter_cvv"></string>
+    <string name="lbl_enter_username">User Name</string>
+    <string name="lbl_password">Password</string>
+    <string name="lbl_enter_password">Password</string>
+    <string name="lbl_terms">Terms and Conditions</string>
+    <string name="agree">I agree</string>
+    <string name="lbl_email">Email</string>
+    <string name="lbl_enter_email">email</string>
+    <string name="lbl_credit">Credit</string>
+    <string name="lbl_enter_credit"></string>
+    <string name="lbl_credite">Expiry</string>
+    <string name="lbl_enter_credite"></string>
+    <string name="lbl_cvv">CVV</string>
+    <string name="lbl_enter_cvv"></string>
 </resources>
