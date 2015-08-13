@@ -15,4 +15,15 @@
     <string name="lbl_enter_credite"></string>
     <string name="lbl_cvv">CVV</string>
     <string name="lbl_enter_cvv"></string>
+    <string name="insight">INSIGHT</string>
+    <string name="profile">Customer Profile</string>  
+    <string name="profile_name1">Enter Your Name</string>    
+    <string name="password_name">Enter Password</string>  
+    <string name="password_name2">Enter Again</string>
+    <string name="country_tag">Country</string>
+    <string name="website">WEBSITE URL</string>
+    <string name="edit_website">Enter Url</string>
+    <string name="detail">DETAILS</string>
+    <string name="profile_done">DONE</string>
+    <string name="profile_back">BACK</string>
 </resources>
