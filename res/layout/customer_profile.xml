@@ -4,16 +4,6 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/profileView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/profile"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +20,7 @@
         android:layout_alignBottom="@+id/textView2"
         android:layout_marginLeft="54dp"
         android:layout_toRightOf="@+id/textView2"
-        android:text="@string/profile_name1" />
+        android:text="@string/profile_name1" android:layout_alignEnd="@+id/detailAreaScroller"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -49,7 +39,8 @@
         android:layout_alignBottom="@+id/textView4"
         android:layout_marginLeft="50dp"
         android:layout_toRightOf="@+id/textView4"
-        android:text="@string/password_name" />
+        android:layout_alignEnd="@+id/detailAreaScroller"
+        android:inputType="textPassword"/>
 
     <TextView
         android:id="@+id/textView6"
@@ -67,8 +58,7 @@
         android:layout_alignBaseline="@+id/textView6"
         android:layout_alignBottom="@+id/textView6"
         android:layout_alignLeft="@+id/textView5"
-        android:layout_alignRight="@+id/textView5"
-        android:text="@string/password_name2" />
+        android:layout_alignParentEnd="true" android:inputType="textPassword"/>
 
     <TextView
         android:id="@+id/textView7"
@@ -77,7 +67,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView6"
         android:layout_marginTop="30dp"
-        android:text="Country_tag" />
+        android:text="Country" />
      <RadioGroup
         android:id="@+id/radioGroup1"
         android:layout_width="wrap_content"
@@ -89,22 +79,21 @@
             android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LOCAL" />
+                />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GLOBAL" />
+            android:text="Global" />
     </RadioGroup>
 
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="25dip"
         android:layout_height="25dip"
-        android:layout_alignLeft="@+id/button2"
         android:layout_alignRight="@+id/editText1"
-        android:layout_alignTop="@+id/textView7" />
+        android:layout_alignTop="@+id/textView7" android:layout_toEndOf="@+id/textView6"/>
 
     <TextView
         android:id="@+id/textView8"
@@ -113,16 +102,15 @@
         android:layout_above="@+id/textView9"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="40dp"
-        android:text="WEBSITE URL" />
+        android:text="Website URL" />
 
     <EditText
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView8"
-        android:layout_alignRight="@+id/textView5"
         android:layout_toRightOf="@+id/textView4"
-        android:text="@string/edit_website" />
+        android:text="@string/edit_website" android:layout_alignEnd="@+id/detailAreaScroller"/>
 
     <TextView
         android:id="@+id/textView9"
@@ -131,15 +119,14 @@
         android:layout_above="@+id/button1"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="50dp"
-        android:text="DETAILS" />
+        android:text="Details" />
 
     <ScrollView
         android:id="@+id/detailAreaScroller"
-        android:layout_width="115dp"
+        android:layout_width="120dp"
         android:layout_height="58dp"
         android:layout_below="@+id/textView8"
-        android:layout_toRightOf="@+id/button1"
-        android:scrollbars="vertical" >
+        android:scrollbars="vertical" android:layout_alignParentEnd="true" android:layout_toEndOf="@+id/textView8">
 
         <EditText
             android:id="@+id/editView2"
@@ -156,15 +143,14 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/textView9"
-        android:text="@string/profile_done" />
+        android:text="@string/profile_done" android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"/>
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/textView3"

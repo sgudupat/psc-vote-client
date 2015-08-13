@@ -4,29 +4,18 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/regretView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="26dp"
-        android:text="REGRET SCREEN"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
         android:id="@+id/regretView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/regretView1"
         android:layout_marginTop="48dp"
-        android:text="Please Provide Your Feedback To Us And What Will Make You To Use &amp; Votes" />
+        android:text="Please provide your feedback to us and what will make you to use &amp;votes"
+        android:textSize="45px"/>
 
     <EditText
         android:id="@+id/regretedit1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
@@ -42,8 +31,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/regretedit1"
         android:layout_marginTop="93dp"
-        android:text="You Can Reach To Us At feedback@votes.com"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="You can reach to us at feedback@votes.com" android:textSize="35px"/>
 
     <Button
         android:id="@+id/regret_button1"
@@ -52,6 +40,6 @@
         android:layout_below="@+id/regretView3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:text="DONE" />
+        android:text="Done" />
 
 </RelativeLayout>
