@@ -68,5 +68,10 @@ public class HomePageActivity extends Activity {
     Intent intent = new Intent(this, RegisterActivity.class);
     startActivity(intent);
    }
+   public void forgetPassword(View view)
+   {
+   	Intent intent = new Intent(this, ForgetPasswordActivity.class);
+   	startActivity(intent);
+   }
   
 }
