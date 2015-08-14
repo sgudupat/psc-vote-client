@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
+
+import com.client.vote.common.SimpleHttpClient;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
