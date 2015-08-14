@@ -67,7 +67,8 @@
             android:layout_height="wrap_content"
             android:text="SignIn"
             android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/login_signUp"/>
+            android:layout_toStartOf="@+id/login_signUp"
+            android:onClick="signIn"/>
 
     <Button
             android:id="@+id/login_signUp"
@@ -75,6 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="56dp"
             android:text="SignUp"
+            android:onClick="signUp"
             android:layout_alignBottom="@+id/login_signIn"
             android:layout_alignParentEnd="true"/>
 
