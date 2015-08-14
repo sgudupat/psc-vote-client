@@ -31,4 +31,5 @@
     <string name="forget_email">Enter Email</string>
     <string name="regret_feedback">Enter Your FeedBack</string>
     <string name="newanchor_edit">Enter Name</string>
+        <string name="rewards_edit">Enter Values</string>
 </resources>
