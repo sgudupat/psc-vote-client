@@ -8,29 +8,26 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.TextView;
+import com.client.vote.domain.Anchor;
 
 import java.util.ArrayList;
 
 public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
-    private ArrayList<String> list = new ArrayList<String>();
+    private ArrayList<Anchor> list = new ArrayList<Anchor>();
     private Context context;
 
-
-    public MyCustomAdapter(ArrayList<String> list, Context context) {
+    public MyCustomAdapter(ArrayList<Anchor> list, Context context) {
         this.list = list;
         this.context = context;
     }
-
 
     public int getCount() {
         return list.size();
     }
 
-
     public Object getItem(int pos) {
         return list.get(pos);
     }
-
 
     public View getView(final int position, View convertView, ViewGroup parent) {
         View view = convertView;
@@ -41,7 +38,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
 
         //Handle TextView and display string from your anchor_summary
         TextView listItemText = (TextView) view.findViewById(R.id.list_item_string);
-        listItemText.setText(list.get(position));
+        listItemText.setText(list.get(position).getAnchorName());
 
         //Handle buttons and add onClickListeners
         Button moreBtn = (Button) view.findViewById(R.id.more_btn);
@@ -56,6 +53,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
                 //notifyDataSetChanged();
             }
         });
+
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,14 +61,11 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
                 // notifyDataSetChanged();
             }
         });
-
         return view;
     }
 
-
     @Override
     public long getItemId(int position) {
-        // TODO Auto-generated method stub
         return 0;
     }
 }
