@@ -5,6 +5,7 @@
    <string name="sign_up">Register</string>
     <string name="cancel">Regret</string>
     <string name="forget_password">Forget Password</string>
+    <string name="new_anchor">New Anchor</string>
     <string name="lbl_username">Login Name</string>
     <string name="lbl_enter_username">User Name</string>
     <string name="lbl_password">Password</string>

@@ -21,6 +21,7 @@
                <activity android:name="RegisterActivity" android:label="@string/app_name"/>
                <activity android:name=".RegretActivity" android:label="@string/cancel"></activity>
          <activity android:name=".ForgetPasswordActivity" android:label="@string/forget_password"></activity>
+         <activity android:name=".NewAnchorActivity" android:label="@string/new_anchor"></activity>
                
     </application>
 </manifest>
