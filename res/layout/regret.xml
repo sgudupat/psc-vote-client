@@ -3,43 +3,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+  
+
     <TextView
-            android:id="@+id/regretView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="48dp"
-            android:text="Please provide your feedback to us and what will make you to use &amp;votes"
-            android:textSize="45px"/>
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:text="Please provide your feedback to us and what will make you to use &amp;amp;votes" />
 
     <EditText
-            android:id="@+id/regretedit1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/regretView2"
-            android:layout_marginTop="40dp"
-            android:text="@string/regret_feedback"/>
+        android:id="@+id/regretedit1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:text="@string/regret_feedback" />
 
     <TextView
-            android:id="@+id/regretView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/regretedit1"
-            android:layout_marginTop="93dp"
-            android:text="You can reach to us at feedback@votes.com" android:textSize="35px"/>
-
-    <Button
+        android:id="@+id/regretView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/regretedit1"
+        android:layout_marginTop="14dp"
+        android:text="You can reach to us at feedback@votes.com"
+        android:textSize="35px" />
+      <Button
             android:id="@+id/regret_button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/regretView3"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
-            android:text="Done"/>
+            android:text="Done"
+            android:onClick="loginPage"/>
 
 </RelativeLayout>
