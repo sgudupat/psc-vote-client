@@ -1,161 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="25dp"
-        android:text="Name :" />
-
-    <EditText
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_marginLeft="54dp"
-        android:layout_toRightOf="@+id/textView2"
-        android:text="@string/profile_name1" android:layout_alignEnd="@+id/detailAreaScroller"/>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="33dp"
-        android:text="Change Password" />
-
-    <EditText
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_marginLeft="50dp"
-        android:layout_toRightOf="@+id/textView4"
-        android:layout_alignEnd="@+id/detailAreaScroller"
-        android:inputType="textPassword"/>
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView4"
-        android:layout_marginTop="34dp"
-        android:text="Re Enter Password" />
-
-    <EditText
-        android:id="@+id/rePassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView6"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_alignParentEnd="true" android:inputType="textPassword"/>
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView6"
-        android:layout_marginTop="30dp"
-        android:text="Country" />
-     <RadioGroup
-        android:id="@+id/radioGroup1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/spinner1"
-        android:layout_toRightOf="@+id/textView8" >
-
-        <RadioButton
-            android:id="@+id/radioButton1"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:layout_marginTop="25dp"
+            android:text="Name :"/>
+
+    <EditText
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView2"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_marginLeft="54dp"
+            android:layout_toRightOf="@+id/textView2"
+            android:text="@string/profile_name1" android:layout_alignEnd="@+id/detailAreaScroller"/>
+
+    <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="33dp"
+            android:text="Change Password"/>
+
+    <EditText
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView4"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/textView4"
+            android:layout_alignEnd="@+id/detailAreaScroller"
+            android:inputType="textPassword"/>
+
+    <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView4"
+            android:layout_marginTop="34dp"
+            android:text="Re Enter Password"/>
+
+    <EditText
+            android:id="@+id/rePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView6"
+            android:layout_alignBottom="@+id/textView6"
+            android:layout_alignLeft="@+id/textView5"
+            android:layout_alignParentEnd="true" android:inputType="textPassword"/>
+
+    <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView6"
+            android:layout_marginTop="30dp"
+            android:text="Country"/>
+    <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/spinner1"
+            android:layout_toRightOf="@+id/textView8">
+
+        <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 />
 
         <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Global" />
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Global"/>
     </RadioGroup>
 
     <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="25dip"
-        android:layout_height="25dip"
-        android:layout_alignRight="@+id/editText1"
-        android:layout_alignTop="@+id/textView7" android:layout_toEndOf="@+id/textView6"/>
+            android:id="@+id/spinner1"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_alignRight="@+id/editText1"
+            android:layout_alignTop="@+id/textView7" android:layout_toEndOf="@+id/textView6"/>
 
     <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView9"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="40dp"
-        android:text="Website URL" />
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView9"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="40dp"
+            android:text="Website URL"/>
 
     <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView8"
-        android:layout_toRightOf="@+id/textView4"
-        android:text="@string/edit_website" android:layout_alignEnd="@+id/detailAreaScroller"/>
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView8"
+            android:layout_toRightOf="@+id/textView4"
+            android:text="@string/edit_website" android:layout_alignEnd="@+id/detailAreaScroller"/>
 
     <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="50dp"
-        android:text="Details" />
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button1"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="50dp"
+            android:text="Details"/>
 
     <ScrollView
-        android:id="@+id/detailAreaScroller"
-        android:layout_width="120dp"
-        android:layout_height="58dp"
-        android:layout_below="@+id/textView8"
-        android:scrollbars="vertical" android:layout_alignParentEnd="true" android:layout_toEndOf="@+id/textView8">
+            android:id="@+id/detailAreaScroller"
+            android:layout_width="120dp"
+            android:layout_height="58dp"
+            android:layout_below="@+id/textView8"
+            android:scrollbars="vertical" android:layout_alignParentEnd="true" android:layout_toEndOf="@+id/textView8">
 
         <EditText
-            android:id="@+id/editView2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignBottom="@+id/textView9"
-            android:layout_below="@+id/textView8"
-            android:layout_toRightOf="@+id/textView4"
-            android:ems="10" >
+                android:id="@+id/editView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/textView9"
+                android:layout_below="@+id/textView8"
+                android:layout_toRightOf="@+id/textView4"
+                android:ems="10">
 
-            <requestFocus />
+            <requestFocus/>
         </EditText>
     </ScrollView>
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_done" android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"/>
+            android:id="@+id/button1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_done" android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"/>
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/textView3"
-        android:text="@string/profile_back" />
+            android:id="@+id/button2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/textView3"
+            android:text="@string/profile_back"/>
 
-   
 
 </RelativeLayout>

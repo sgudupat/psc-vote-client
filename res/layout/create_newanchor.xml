@@ -1,80 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/RelativeLayout1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+                android:id="@+id/RelativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
     <TextView
-        android:id="@+id/newAnchor1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"
-        android:text="Create New Anchor"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:id="@+id/newAnchor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:text="Create New Anchor"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <TextView
-        android:id="@+id/newAnchor2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/newAnchor1"
-        android:layout_marginTop="65dp"
-        android:text="Anchor Name" />
+            android:id="@+id/newAnchor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/newAnchor1"
+            android:layout_marginTop="65dp"
+            android:text="Anchor Name"/>
 
     <EditText
-        android:id="@+id/newanchor_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/newAnchor2"
-        android:layout_centerHorizontal="true"
-        android:text="@string/newanchor_edit" />
+            android:id="@+id/newanchor_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/newAnchor2"
+            android:layout_centerHorizontal="true"
+            android:text="@string/newanchor_edit"/>
 
     <CheckedTextView
-        android:id="@+id/checked_newanchor1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/newanchor_edit"
-        android:layout_below="@+id/newanchor_edit"
-        android:layout_marginTop="18dp"
-        android:text="Check Avaliability" />
+            android:id="@+id/checked_newanchor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/newanchor_edit"
+            android:layout_below="@+id/newanchor_edit"
+            android:layout_marginTop="18dp"
+            android:text="Check Avaliability"/>
 
     <TextView
-        android:id="@+id/newAnchor3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/newAnchor2"
-        android:layout_centerVertical="true"
-        android:text="Cost :" />
+            android:id="@+id/newAnchor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/newAnchor2"
+            android:layout_centerVertical="true"
+            android:text="Cost :"/>
 
     <EditText
-        android:id="@+id/newanchor_edit2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/newAnchor3"
-        android:layout_alignLeft="@+id/checked_newanchor1"
-        android:layout_alignRight="@+id/newanchor_edit"
-        android:text="AMOUNT" />
+            android:id="@+id/newanchor_edit2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/newAnchor3"
+            android:layout_alignLeft="@+id/checked_newanchor1"
+            android:layout_alignRight="@+id/newanchor_edit"
+            android:text="AMOUNT"/>
 
     <Button
-        android:id="@+id/newanchor_button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/newAnchor3"
-        android:layout_below="@+id/newAnchor3"
-        android:layout_marginTop="52dp"
-        android:text="DONE" />
+            android:id="@+id/newanchor_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/newAnchor3"
+            android:layout_below="@+id/newAnchor3"
+            android:layout_marginTop="52dp"
+            android:text="DONE"/>
 
     <Button
-        android:id="@+id/newanchor_button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/newanchor_button1"
-        android:layout_alignBottom="@+id/newanchor_button1"
-        android:layout_alignRight="@+id/checked_newanchor1"
-        android:text="BACK" />
+            android:id="@+id/newanchor_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/newanchor_button1"
+            android:layout_alignBottom="@+id/newanchor_button1"
+            android:layout_alignRight="@+id/checked_newanchor1"
+            android:text="BACK"/>
 
 </RelativeLayout>

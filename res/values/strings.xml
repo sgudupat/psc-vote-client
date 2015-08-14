@@ -17,9 +17,9 @@
     <string name="lbl_enter_cvv"></string>
     <string name="country">Country</string>
     <string name="insight">Insight</string>
-    <string name="profile">Customer Profile</string>  
-    <string name="profile_name1">Enter Your Name</string>    
-    <string name="password_name">Enter Password</string>  
+    <string name="profile">Customer Profile</string>
+    <string name="profile_name1">Enter Your Name</string>
+    <string name="password_name">Enter Password</string>
     <string name="password_name2">Enter Again</string>
     <string name="country_tag">Country</string>
     <string name="website">Website URL</string>
@@ -31,5 +31,5 @@
     <string name="forget_email">Enter Email</string>
     <string name="regret_feedback">Enter Your FeedBack</string>
     <string name="newanchor_edit">Enter Name</string>
-        <string name="rewards_edit">Enter Values</string>
+    <string name="rewards_edit">Enter Values</string>
 </resources>
