@@ -15,8 +15,8 @@ public class RegisterActivity extends Activity {
 	}
 	public void regret(View view)
 	{
-		//Intent intent = new Intent(this, RegretActivity.class);
-		//startActivity(intent);
+		Intent intent = new Intent(this, RegretActivity.class);
+		startActivity(intent);
 	}
 
 	
