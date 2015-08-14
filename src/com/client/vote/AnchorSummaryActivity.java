@@ -1,10 +1,12 @@
 package com.client.vote;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 import com.client.vote.common.SimpleHttpClient;
 import com.client.vote.domain.Anchor;
@@ -72,5 +74,10 @@ public class AnchorSummaryActivity extends Activity {
             Log.e("AnchorSummaryActivity", errorMsg);
             return "fail";
         }
+    }
+    public void newAnchor(View view)
+    {
+    	Intent intent = new Intent(this,NewAnchorActivity.class );
+    	startActivity(intent);
     }
 }
