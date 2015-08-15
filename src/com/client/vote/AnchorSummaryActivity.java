@@ -75,9 +75,9 @@ public class AnchorSummaryActivity extends Activity {
             return "fail";
         }
     }
-    public void newAnchor(View view)
-    {
-    	Intent intent = new Intent(this,NewAnchorActivity.class );
-    	startActivity(intent);
+
+    public void newAnchor(View view) {
+        Intent intent = new Intent(this, NewAnchorActivity.class);
+        startActivity(intent);
     }
 }

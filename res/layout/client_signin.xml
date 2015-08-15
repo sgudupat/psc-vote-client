@@ -36,7 +36,7 @@
                 android:layout_marginLeft="19dp"
                 android:layout_toEndOf="@+id/textView1"
                 android:gravity="center"
-                android:text="username"/>
+                android:hint="username"/>
 
         <TextView
                 android:id="@+id/textView2"
@@ -57,7 +57,7 @@
                 android:layout_toEndOf="@+id/textView1"
                 android:layout_weight="1.07"
                 android:gravity="center"
-                android:text="password" android:inputType="textPassword"/>
+                android:inputType="textPassword" android:hint="password"/>
 
     </RelativeLayout>
 

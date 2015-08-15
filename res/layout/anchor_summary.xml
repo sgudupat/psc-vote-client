@@ -9,8 +9,8 @@
             android:layout_height="wrap_content"
             android:text="New Anchor"
             android:id="@+id/newAnchor"
-             android:layout_gravity="right"
-             android:onClick="newAnchor"/>
+            android:layout_gravity="right"
+            android:onClick="newAnchor"/>
     <ListView
             android:id="@+id/list_view"
             android:layout_height="match_parent"
