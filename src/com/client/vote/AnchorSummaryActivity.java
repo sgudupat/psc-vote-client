@@ -34,7 +34,7 @@ public class AnchorSummaryActivity extends Activity {
         // Adding items to list view
         // 1. pass context and data to the custom adapter
         Log.i("inside build list", "list built");
-        final MyCustomAdapter adapter = new MyCustomAdapter(generateData(clientId), AnchorSummaryActivity.this);
+        final AnchorAdapter adapter = new AnchorAdapter(generateData(clientId), AnchorSummaryActivity.this);
         listView.setAdapter(adapter);
     }
 

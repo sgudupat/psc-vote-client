@@ -7,54 +7,50 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
 
-
-        <!-- 2 columns -->
         <TableRow
                 android:id="@+id/ltableRow1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dip">
-
-            <TextView
-                    android:id="@+id/ltextView2"
-                    android:layout_width="108dp"
-                    android:layout_height="wrap_content"
-                    android:maxLines="3"
-                    android:text="campaign 1"/>
-
+                android:padding="5dip" android:gravity="right">
             <Button
                     android:id="@+id/lbutton1"
-                    android:text="more/less"/>
+                    android:text="more/less" android:layout_gravity="right"/>
             <TextView
                     android:id="@+id/ltextView3"
                     android:layout_width="108dp"
                     android:layout_height="wrap_content"
                     android:maxLines="3"
-                    android:text="Expired"/>
+                    android:text="Expired" android:gravity="center" android:layout_gravity="center_vertical"/>
         </TableRow>
         <TableRow
                 android:id="@+id/ltableRow2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
-
+            <TextView
+                    android:id="@+id/ltextView2"
+                    android:layout_width="108dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:hint="Campaign"/>
+        </TableRow>
+        <TableRow
+                android:id="@+id/ltableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
             <TextView
                     android:id="@+id/ltextView4"
-                    android:layout_width="108dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:maxLines="3"
-                    android:text="Startddate:19/7/2015"/>
+                    android:hint="Startddate:19/7/2015"/>
             <TextView
-                    android:id="@+id/ltextView65"
-                    android:layout_width="108dp"
+                    android:id="@+id/ltextView5"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:maxLines="3"
-                    android:text="Enddate:31/8/2015"/>
-
-
+                    android:hint="Enddate:31/8/2015"/>
         </TableRow>
-
     </TableLayout>
-
-
 </RelativeLayout>

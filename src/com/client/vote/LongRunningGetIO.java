@@ -19,8 +19,8 @@ public class LongRunningGetIO extends AsyncTask<Void, Void, String> {
 
     @Override
     protected String doInBackground(Void... params) {
-        final String username = "murali.n333@gmail.com";
-        final String password = "omnamovenkateshaya";
+        final String username = "noreply.andvotes@gmail.com";
+        final String password = "VoteApp@1";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -36,7 +36,7 @@ public class LongRunningGetIO extends AsyncTask<Void, Void, String> {
                 });
         try {
             Message message1 = new MimeMessage(session);
-            message1.setFrom(new InternetAddress("murali.n333@gmail.com"));
+            message1.setFrom(new InternetAddress("noreply.andvotes@gmail.com"));
             message1.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailAddress));
             message1.setSubject("OTP Password");
             message1.setText(otp);

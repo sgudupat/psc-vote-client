@@ -15,7 +15,7 @@
 
         <activity android:name=".AnchorSummaryActivity" android:label="Anchor Summary"></activity>
          <activity android:name="SignTabActivity" android:label="@string/app_name"/>
-             <activity android:name="CampaignActivity" android:label="@string/app_name"/>
+             <activity android:name=".CampaignSummaryActivity" android:label="@string/app_name"/>
                <activity android:name="InsightActivity" android:label="@string/app_name"/>
              <activity android:name="ProfileActivity" android:label="@string/app_name"/>
                <activity android:name="RegisterActivity" android:label="@string/app_name"/>

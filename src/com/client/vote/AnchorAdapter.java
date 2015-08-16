@@ -1,6 +1,7 @@
 package com.client.vote;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +11,15 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 import com.client.vote.domain.Anchor;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
-public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
+public class AnchorAdapter extends BaseAdapter implements ListAdapter {
     private ArrayList<Anchor> list = new ArrayList<Anchor>();
     private Context context;
 
-    public MyCustomAdapter(ArrayList<Anchor> list, Context context) {
+    public AnchorAdapter(ArrayList<Anchor> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -43,7 +46,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
         //Handle buttons and add onClickListeners
         Button moreBtn = (Button) view.findViewById(R.id.more_btn);
         Button deleteBtn = (Button) view.findViewById(R.id.delete_btn);
-        Button addBtn = (Button) view.findViewById(R.id.add_btn);
+        Button campaignBtn = (Button) view.findViewById(R.id.show_campaign_btn);
 
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,18 +57,27 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
             }
         });
 
-        addBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //do something
-                // notifyDataSetChanged();
-            }
-        });
+        campaignBtn.setOnClickListener(new ShowCampaignListener(list.get(position).getAnchorName()));
         return view;
     }
 
     @Override
     public long getItemId(int position) {
         return 0;
+    }
+
+    public class ShowCampaignListener implements View.OnClickListener {
+        private String anchorName;
+
+        public ShowCampaignListener(String anchorName) {
+            this.anchorName = anchorName;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(context, CampaignSummaryActivity.class);
+            intent.putExtra("anchorName", anchorName);
+            context.startActivity(intent);
+        }
     }
 }

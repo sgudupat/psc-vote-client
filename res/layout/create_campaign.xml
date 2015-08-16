@@ -55,49 +55,39 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/uname_block"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                 <TextView
                         android:id="@+id/question_options"
                         android:layout_width="74dp"
                         android:layout_height="wrap_content"
                         android:text="Options"/>
+                <EditText
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/optionValue1"
+                        android:layout_gravity="right"/>
+                <EditText
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/optionValue2"
+                        android:layout_gravity="right"/>
+                <EditText
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/optionValue3"
+                        android:layout_gravity="right"/>
+                <EditText
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/optionValue4"
+                        android:layout_gravity="right"/>
+                <EditText
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/optionValue5"
+                        android:layout_gravity="right"/>
 
-                <RadioGroup
-                        android:id="@+id/createcampaignGroup1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                    <RadioButton
-                            android:id="@+id/campaign_radio1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checked="true"
-                            android:text="A"/>
-
-                    <RadioButton
-                            android:id="@+id/campaign_radio2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="B"/>
-
-                    <RadioButton
-                            android:id="@+id/campaign_radio3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="C"/>
-
-                    <RadioButton
-                            android:id="@+id/campaign_radio4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="D"/>
-                    <RadioButton
-                            android:id="@+id/campaign_radio5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="E"/>
-                </RadioGroup>
             </LinearLayout>
 
             <LinearLayout

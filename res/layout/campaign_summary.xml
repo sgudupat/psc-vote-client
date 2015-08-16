@@ -6,29 +6,25 @@
             android:id="@+id/tableLayout1"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
-        <!-- 2 columns -->
+        <Space
+                android:layout_width="20px"
+                android:layout_height="50px"
+                android:layout_column="0"/>
         <TableRow
                 android:id="@+id/tableRow1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dip">
-
-            <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="108dp"
-                    android:layout_height="wrap_content"
-                    android:maxLines="3"
-                    android:text="campaign 1"/>
+                android:padding="5dip" android:gravity="center">
 
             <Button
                     android:id="@+id/button1"
-                    android:text="stop"/>
+                    android:text="stop" android:layout_column="2"/>
             <Button
                     android:id="@+id/button2"
-                    android:text="delete"/>
+                    android:text="delete" android:layout_column="3"/>
             <Button
                     android:id="@+id/button3"
-                    android:text="edit"/>
+                    android:text="edit" android:layout_column="4"/>
         </TableRow>
         <TableRow
                 android:id="@+id/tableRow2"
@@ -37,20 +33,36 @@
                 android:padding="5dip">
 
             <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/cs_campaign_name"
                     android:layout_width="108dp"
                     android:layout_height="wrap_content"
                     android:maxLines="3"
-                    android:text="Startddate:19/7/2015"/>
-            <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="108dp"
-                    android:layout_height="wrap_content"
-                    android:maxLines="3"
-                    android:text="Enddate:31/8/2015"/>
-
+                    android:text="campaign 1" android:layout_column="1" android:layout_span="3"/>
 
         </TableRow>
+        <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dip">
+
+            <TextView
+                    android:id="@+id/cs_start_date"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:text="Startddate:19/7/2015" android:layout_column="1"/>
+            <TextView
+                    android:id="@+id/cs_end_date"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:text="Enddate:31/8/2015" android:layout_column="2" android:layout_span="2"/>
+        </TableRow>
+        <Space
+                android:layout_width="20px"
+                android:layout_height="80px"
+                android:layout_column="0"/>
         <TextView
                 android:id="@+id/previous_campaign"
                 android:layout_width="wrap_content"
@@ -58,7 +70,11 @@
                 android:layout_below="@+id/tableRow2"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:text="Previous Campaign"/>
+                android:text="Previous Campaign(s)" android:visibility="invisible"/>
+        <Space
+                android:layout_width="20px"
+                android:layout_height="40px"
+                android:layout_column="0"/>
         <ListView
                 android:id="@+id/list_view"
                 android:layout_height="wrap_content"
