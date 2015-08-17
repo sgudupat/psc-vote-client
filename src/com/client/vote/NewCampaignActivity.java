@@ -70,4 +70,10 @@ public class NewCampaignActivity extends Activity {
             Toast.makeText(getApplicationContext(), "Creation Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
         }
     }
+
+    public void showCampaignSummary(View view) {
+        Intent intent = new Intent(this, CampaignSummaryActivity.class);
+        intent.putExtra("anchorName", anchorName);
+        startActivity(intent);
+    }
 }
