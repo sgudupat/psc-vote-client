@@ -3,6 +3,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+    <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
@@ -32,12 +37,12 @@
                     android:id="@+id/rwd_pushLimitValue"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/rewards_edit"/>
+                    android:textSize="15dp"/>
             <TextView
                     android:id="@+id/rewardView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No Limits"/>
+                    android:text=" / No Limits"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -156,7 +161,7 @@
                     android:id="@+id/rwd_validityFrom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/rewards_edit"/>
+                    android:hint="YYYY-MM-DD" android:textSize="15dp"/>
             <TextView
                     android:id="@+id/rewardView10"
                     android:layout_width="wrap_content"
@@ -166,7 +171,7 @@
                     android:id="@+id/rwd_validityTo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/rewards_edit"/>
+                    android:hint="YYYY-MM-DD" android:textSize="15dp"/>
         </LinearLayout>
         <Button
                 android:id="@+id/reward_button1"
@@ -176,4 +181,5 @@
                 android:onClick="createReward"
                 android:text="Done" android:layout_marginTop="40dp" android:layout_gravity="center_horizontal"/>
     </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

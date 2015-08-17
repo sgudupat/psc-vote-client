@@ -5,7 +5,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +30,8 @@ public class RegisterActivity extends Activity {
         super.onCreate(savedInstanceState);
         Log.i("RegisterActivity", "inside client register page");
         setContentView(R.layout.sign_up);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        preferences.edit().clear().commit();
     }
 
     public void regret(View view) {

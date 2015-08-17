@@ -61,6 +61,7 @@ public class NewCampaignActivity extends Activity {
             Log.i("Response:", response);
             if (response.contains("success")) {
                 Intent intent = new Intent(this, CampaignSummaryActivity.class);
+                intent.putExtra("anchorName", anchorName);
                 startActivity(intent);
             } else {
                 Toast.makeText(getApplicationContext(), "Creation Failed, Please Retry !!!", Toast.LENGTH_LONG).show();

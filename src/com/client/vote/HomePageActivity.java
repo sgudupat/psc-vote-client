@@ -24,7 +24,8 @@ public class HomePageActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.client_signin);
-
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        preferences.edit().clear().commit();
     }
 
     public void signIn(View view) {

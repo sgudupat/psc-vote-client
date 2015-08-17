@@ -96,7 +96,7 @@ public class CampaignSummaryActivity extends Activity {
                 String startDate = jsonobject.getString("start_date");
                 String endDate = jsonobject.getString("end_date");
                 Log.i("campaign name", campaignId);
-                items.add(new Campaign(campaignId, question, dateFormat.parse(startDate), dateFormat.parse(endDate)));
+                items.add(new Campaign(campaignId, anchorName, question, dateFormat.parse(startDate), dateFormat.parse(endDate)));
             }
         } catch (Exception e) {
         }
@@ -112,6 +112,7 @@ public class CampaignSummaryActivity extends Activity {
     public void showRewardInfo(View view) {
         //This method is useful only for the active Campaign that is displayed in Summary
         Intent intent = new Intent(this, RewardActivity.class);
+        intent.putExtra("anchorName", anchorName);
         intent.putExtra("campaignId", campaignId);
         startActivity(intent);
     }

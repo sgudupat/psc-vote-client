@@ -47,7 +47,7 @@ public class CampaignAdapter extends BaseAdapter implements ListAdapter {
         endDate.setText("End Date : " + list.get(position).getEndDate());
 
         Button rewardInfoBtn = (Button) view.findViewById(R.id.ci_rewardBtn);
-        rewardInfoBtn.setOnClickListener(new ShowRewardInfoListener(list.get(position).getCampaignId()));
+        rewardInfoBtn.setOnClickListener(new ShowRewardInfoListener(list.get(position).getAnchorName(), list.get(position).getCampaignId()));
         return view;
     }
 
@@ -57,15 +57,18 @@ public class CampaignAdapter extends BaseAdapter implements ListAdapter {
     }
 
     public class ShowRewardInfoListener implements View.OnClickListener {
+        private String anchorName;
         private String campaignId;
 
-        public ShowRewardInfoListener(String campaignId) {
+        public ShowRewardInfoListener(String anchorName, String campaignId) {
+            this.anchorName = anchorName;
             this.campaignId = campaignId;
         }
 
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(context, RewardActivity.class);
+            intent.putExtra("anchorName", anchorName);
             intent.putExtra("campaignId", campaignId);
             context.startActivity(intent);
         }
