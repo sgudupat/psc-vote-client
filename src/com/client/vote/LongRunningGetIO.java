@@ -1,10 +1,12 @@
 package com.client.vote;
 
 import android.os.AsyncTask;
+import android.text.TextUtils;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
 import java.util.Properties;
 
 public class LongRunningGetIO extends AsyncTask<Void, Void, String> {
@@ -38,7 +40,13 @@ public class LongRunningGetIO extends AsyncTask<Void, Void, String> {
             Message message1 = new MimeMessage(session);
             message1.setFrom(new InternetAddress("noreply.andvotes@gmail.com"));
             message1.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailAddress));
-            message1.setSubject("OTP Password");
+            if(otp.contains("http://52.74.246.67:8080/vote/forgotPassword.jsp?key=")){
+           	 message1.setSubject("Password link");
+           
+           }else{
+           	 message1.setSubject("OTP Password");
+          
+           }      
             message1.setText(otp);
             Transport.send(message1);
         } catch (MessagingException e) {

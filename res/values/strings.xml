@@ -38,5 +38,6 @@
     <string name="newanchor_edit">Enter Name</string>
     <string name="rewards_edit">Enter Values</string>
     <string name="new_campaign">New Campaign</string>
+    <string name="new_reward">New Reward</string>
 
 </resources>

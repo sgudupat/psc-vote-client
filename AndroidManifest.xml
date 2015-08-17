@@ -23,6 +23,7 @@
         <activity android:name=".ForgetPasswordActivity" android:label="@string/forget_password"></activity>
         <activity android:name=".NewAnchorActivity" android:label="@string/new_anchor"></activity>
         <activity android:name=".NewCampaignActivity" android:label="@string/new_campaign"></activity>
+         <activity android:name=".RewardActivity" android:label="@string/new_reward"></activity>
 
     </application>
 </manifest>

@@ -92,6 +92,10 @@ public class RewardActivity extends Activity {
 	        final EditText rewardDetail = (EditText) findViewById(R.id.reward_scrollView1);
 	        final EditText fromDate = (EditText) findViewById(R.id.rwd_validityFrom);
 	        final EditText toDate = (EditText) findViewById(R.id.rwd_validityTo);
+	        Intent intent = getIntent();
+
+	        // fetch value from key-value pair and make it visible on TextView.
+	        String campaignId = intent.getStringExtra("campaignId");
 	        
 	     /*   DatePicker fdatePicker = (DatePicker) findViewById(R.id.reward_datePicker1);
 	        int sday = fdatePicker.getDayOfMonth();
@@ -105,9 +109,9 @@ public class RewardActivity extends Activity {
 	        int eyear = edatePicker.getYear();
 	        String toDate=String.valueOf(eday)+"/"+String.valueOf(emonth)+"/"+String.valueOf(eyear);*/
 	        final ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
-	        postParameters.add(new BasicNameValuePair("campaignId", ""));
+	        postParameters.add(new BasicNameValuePair("campaignId", campaignId));
 	        postParameters.add(new BasicNameValuePair("rewardDescription", rewardDetail.getText().toString()));
-	        postParameters.add(new BasicNameValuePair("imageURL", ""));
+	        postParameters.add(new BasicNameValuePair("imageURL", "http://52.74.246.67:8080/vote/images/one.jpg"));
 	        postParameters.add(new BasicNameValuePair("pushRegion", rb.getText().toString()));
 	        postParameters.add(new BasicNameValuePair("pushLimit", pushValue.getText().toString()));
 	        postParameters.add(new BasicNameValuePair("pushFilter", rb2.getText().toString()));
