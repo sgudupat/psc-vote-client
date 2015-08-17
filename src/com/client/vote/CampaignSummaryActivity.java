@@ -52,7 +52,7 @@ public class CampaignSummaryActivity extends Activity {
         //Display all expired Campaigns
         //instantiate custom adapter
         if (campaigns.size() > 1) {
-            List<Campaign> remainingCampaigns = new ArrayList<>();
+            List<Campaign> remainingCampaigns = new ArrayList<Campaign>();
             for (int i = 1; i < campaigns.size(); i++) {
                 remainingCampaigns.add(campaigns.get(i));
             }
