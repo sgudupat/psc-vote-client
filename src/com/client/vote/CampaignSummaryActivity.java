@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.client.vote.common.SimpleHttpClient;
@@ -24,6 +25,7 @@ public class CampaignSummaryActivity extends Activity {
 
     String clientId;
     String anchorName;
+    String campaignId;
     List<Campaign> items = new ArrayList<Campaign>();
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -45,6 +47,7 @@ public class CampaignSummaryActivity extends Activity {
             CSCampaignName.setText(campaigns.get(0).getQuestion());
             CSStartDate.setText("Start Date:" + campaigns.get(0).getStartDate());
             CSEndDate.setText("End Date:" + campaigns.get(0).getEndDate());
+            campaignId = campaigns.get(0).getCampaignId();
         }
         //Display all expired Campaigns
         //instantiate custom adapter
@@ -61,6 +64,7 @@ public class CampaignSummaryActivity extends Activity {
             //handle list view and assign adapter
             lView.setAdapter(adapter);
         }
+
     }
 
     private String fetchCampaignInfo(String clientId, String anchorName) {
@@ -104,4 +108,12 @@ public class CampaignSummaryActivity extends Activity {
         intent.putExtra("anchorName", anchorName);
         startActivity(intent);
     }
+
+    public void showRewardInfo(View view) {
+        //This method is useful only for the active Campaign that is displayed in Summary
+        Intent intent = new Intent(this, RewardActivity.class);
+        intent.putExtra("campaignId", campaignId);
+        startActivity(intent);
+    }
+
 }

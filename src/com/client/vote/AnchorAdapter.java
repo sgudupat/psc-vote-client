@@ -46,7 +46,6 @@ public class AnchorAdapter extends BaseAdapter implements ListAdapter {
         //Handle buttons and add onClickListeners
         Button moreBtn = (Button) view.findViewById(R.id.more_btn);
         Button deleteBtn = (Button) view.findViewById(R.id.delete_btn);
-        Button campaignBtn = (Button) view.findViewById(R.id.show_campaign_btn);
 
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +56,7 @@ public class AnchorAdapter extends BaseAdapter implements ListAdapter {
             }
         });
 
+        Button campaignBtn = (Button) view.findViewById(R.id.show_campaign_btn);
         campaignBtn.setOnClickListener(new ShowCampaignListener(list.get(position).getAnchorName()));
         return view;
     }

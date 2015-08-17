@@ -1,10 +1,12 @@
 package com.client.vote;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 import com.client.vote.domain.Campaign;
@@ -43,11 +45,29 @@ public class CampaignAdapter extends BaseAdapter implements ListAdapter {
         question.setText(list.get(position).getQuestion());
         startDate.setText("Start Date : " + list.get(position).getStartDate());
         endDate.setText("End Date : " + list.get(position).getEndDate());
+
+        Button rewardInfoBtn = (Button) view.findViewById(R.id.ci_rewardBtn);
+        rewardInfoBtn.setOnClickListener(new ShowRewardInfoListener(list.get(position).getCampaignId()));
         return view;
     }
 
     @Override
     public long getItemId(int position) {
         return 0;
+    }
+
+    public class ShowRewardInfoListener implements View.OnClickListener {
+        private String campaignId;
+
+        public ShowRewardInfoListener(String campaignId) {
+            this.campaignId = campaignId;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(context, RewardActivity.class);
+            intent.putExtra("campaignId", campaignId);
+            context.startActivity(intent);
+        }
     }
 }

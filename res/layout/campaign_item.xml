@@ -12,18 +12,45 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip" android:gravity="right">
-            <Button
-                    android:id="@+id/lbutton1"
-                    android:text="more/less" android:layout_gravity="right"/>
-            <TextView
-                    android:id="@+id/ltextView3"
-                    android:layout_width="108dp"
-                    android:layout_height="wrap_content"
-                    android:maxLines="3"
-                    android:text="Expired" android:gravity="center" android:layout_gravity="center_vertical"/>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" android:gravity="right">
+                <Button
+                        android:id="@+id/lbutton1"
+                        android:text="more/less" android:layout_gravity="right" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/ltextView3"
+                        android:layout_width="108dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="3"
+                        android:text="Expired" android:gravity="center" android:layout_gravity="center_vertical"/>
+            </LinearLayout>
         </TableRow>
         <TableRow
                 android:id="@+id/ltableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dip" android:gravity="right">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" android:gravity="right">
+                <Button
+                        android:id="@+id/ci_rewardBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"/>
+                <Button
+                        android:id="@+id/ci_insightBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="I" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"/>
+            </LinearLayout>
+        </TableRow>
+        <TableRow
+                android:id="@+id/ltableRow3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -35,7 +62,7 @@
                     android:hint="Campaign"/>
         </TableRow>
         <TableRow
-                android:id="@+id/ltableRow3"
+                android:id="@+id/ltableRow4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">

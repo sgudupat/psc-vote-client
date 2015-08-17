@@ -19,22 +19,38 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent" android:layout_marginLeft="175dp">
+                android:layout_height="fill_parent" android:gravity="right">
             <Button
                     android:id="@+id/button1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="stop" android:layout_gravity="right"/>
+                    android:text="Stop" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"/>
             <Button
                     android:id="@+id/button3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="edit" android:layout_gravity="right"/>
+                    android:text="Edit" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"/>
             <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="delete" android:layout_gravity="right"/>
+                    android:text="Delete" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:gravity="right">
+            <Button
+                    android:id="@+id/cs_rewardBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"
+                    android:onClick="showRewardInfo"/>
+            <Button
+                    android:id="@+id/cs_insightBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"/>
         </LinearLayout>
         <TextView
                 android:id="@+id/cs_campaign_name"
