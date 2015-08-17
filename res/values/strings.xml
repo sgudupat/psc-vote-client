@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">vote_client</string>
-   <string name="sign_up">Register</string>
+    <string name="sign_up">Register</string>
     <string name="cancel">Regret</string>
     <string name="forget_password">Forget Password</string>
     <string name="new_anchor">New Anchor</string>
@@ -37,5 +37,6 @@
     <string name="regret_feedback">Enter Your FeedBack</string>
     <string name="newanchor_edit">Enter Name</string>
     <string name="rewards_edit">Enter Values</string>
+    <string name="new_campaign">New Campaign</string>
 
 </resources>

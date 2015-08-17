@@ -37,10 +37,10 @@ public class CampaignAdapter extends BaseAdapter implements ListAdapter {
             view = inflater.inflate(R.layout.campaign_item, null);
         }
         //Handle TextView and display string from your list
-        TextView campaignId = (TextView) view.findViewById(R.id.ltextView2);
+        TextView question = (TextView) view.findViewById(R.id.ltextView2);
         TextView startDate = (TextView) view.findViewById(R.id.ltextView4);
         TextView endDate = (TextView) view.findViewById(R.id.ltextView5);
-        campaignId.setText(list.get(position).getCampaignId());
+        question.setText(list.get(position).getQuestion());
         startDate.setText("Start Date : " + list.get(position).getStartDate());
         endDate.setText("End Date : " + list.get(position).getEndDate());
         return view;

@@ -42,7 +42,7 @@ public class CampaignSummaryActivity extends Activity {
             TextView CSCampaignName = (TextView) findViewById(R.id.cs_campaign_name);
             TextView CSStartDate = (TextView) findViewById(R.id.cs_start_date);
             TextView CSEndDate = (TextView) findViewById(R.id.cs_end_date);
-            CSCampaignName.setText(campaigns.get(0).getCampaignId());
+            CSCampaignName.setText(campaigns.get(0).getQuestion());
             CSStartDate.setText("Start Date:" + campaigns.get(0).getStartDate());
             CSEndDate.setText("End Date:" + campaigns.get(0).getEndDate());
         }
@@ -99,4 +99,9 @@ public class CampaignSummaryActivity extends Activity {
         return items;
     }
 
+    public void createCampaign(View view) {
+        Intent intent = new Intent(this, NewCampaignActivity.class);
+        intent.putExtra("anchorName", anchorName);
+        startActivity(intent);
+    }
 }

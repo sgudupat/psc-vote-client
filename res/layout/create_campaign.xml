@@ -44,7 +44,7 @@
                         android:text="Question"/>
 
                 <EditText
-                        android:id="@+id/campaign_questions"
+                        android:id="@+id/campaign_question"
                         android:layout_width="fill_parent"
                         android:layout_height="80dp"
                         android:hint="Enter Question"/>
@@ -108,7 +108,7 @@
                         android:layout_width="220dp"
                         android:layout_height="wrap_content"
                         android:inputType="date"
-                        android:text="13-8_2015" android:layout_weight="0.33"/>
+                        android:layout_weight="0.33" android:hint="YYYY-MM-DD format"/>
             </LinearLayout>
 
             <LinearLayout
@@ -130,7 +130,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:inputType="date"
-                        android:text="15-8-2015">
+                        android:hint="YYYY-MM-DD format">
 
                     <requestFocus/>
                 </EditText>
@@ -159,13 +159,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
-                            android:text="Global"/>
+                            android:text="Global" android:hint="G"/>
 
                     <RadioButton
                             android:id="@+id/regoin_radio2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Client Country"/>
+                            android:text="Client Country" android:hint="C"/>
                 </RadioGroup>
             </LinearLayout>
 
@@ -183,7 +183,7 @@
                         android:text="Reward Info"/>
 
                 <ScrollView
-                        android:id="@+id/rewardinfoScroller"
+                        android:id="@+id/rewardInfoScroller"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:scrollbars="vertical">
@@ -216,7 +216,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/create_campaigncost"
-                        android:text="AMOUNT"/>
+                        android:hint="$0.00"/>
             </LinearLayout>
 
             <LinearLayout
@@ -232,7 +232,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="58dp"
-                        android:text="Done"/>
+                        android:text="Done" android:onClick="submitNewCampaign"/>
 
                 <Button
                         android:id="@+id/newanchor_button2"

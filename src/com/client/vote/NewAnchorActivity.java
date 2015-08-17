@@ -24,7 +24,7 @@ public class NewAnchorActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i("NewAnchorActivity", "inside new anchor page");
-        setContentView(R.layout.create_newanchor);
+        setContentView(R.layout.create_anchor);
     }
 
     public void checkAvailability(View view) {
