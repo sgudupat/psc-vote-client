@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/rewardsView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="REWARDS"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/reward_edit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/rewardView3"
+        android:layout_alignBottom="@+id/rewardView3"
+        android:layout_centerHorizontal="true"
+        android:text="@string/rewards_edit" />
+
+    <TextView
+        android:id="@+id/rewardView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/rewardView3"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="19dp"
+        android:text="No Limits" />
+
+    <TextView
+        android:id="@+id/rewardView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rewardView2"
+        android:layout_below="@+id/reward_edit1"
+        android:layout_marginTop="21dp"
+        android:text="Region" />
+
+    <RadioGroup
+        android:id="@+id/rewards_radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rewardView5"
+        android:layout_toRightOf="@+id/rewardView3"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rewards_radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/rewardView4"
+            android:layout_alignTop="@+id/rewards_radioGroup1"
+            android:text="Client Country" />
+
+        <RadioButton
+            android:id="@+id/rewards_radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/radioGroup1"
+            android:layout_toLeftOf="@+id/rewards_radio1"
+            android:checked="true"
+            android:text="Global" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/reward_radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rewardView6"
+        android:layout_centerHorizontal="true" >
+
+        <RadioButton
+            android:id="@+id/reward_radio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="To Respondents Only" />
+
+        <RadioButton
+            android:id="@+id/reward_radio4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All App Users" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/reward_imageView1"
+        android:layout_width="76dip"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/rewardView3"
+        android:layout_below="@+id/rewardView6"
+        android:layout_marginTop="22dp"
+        android:src="@drawable/reward" />
+
+    <TextView
+        android:id="@+id/reward_view7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reward_radioGroup2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="Upload Image" />
+
+    <TextView
+        android:id="@+id/reward_view8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/reward_imageView1"
+        android:layout_alignParentLeft="true"
+        android:text="Description" />
+
+  <ScrollView
+      android:id="@+id/reward_scroller"
+      android:layout_width="115dp"
+      android:layout_height="58dp"
+      android:layout_alignLeft="@+id/reward_view7"
+      android:layout_below="@+id/reward_view7"
+      android:layout_marginTop="26dp"
+      android:scrollbars="vertical" >
+
+      <EditText
+          android:id="@+id/reward_scrollView1"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignBottom="@+id/reward_imageView1"
+          android:layout_alignParentRight="true"
+          android:ems="10"
+          android:text="Reward Details" />
+      
+  </ScrollView>
+
+  <TextView
+      android:id="@+id/rewardView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/rewardsView1"
+      android:layout_marginTop="16dp"
+      android:layout_toLeftOf="@+id/reward_edit1"
+      android:text="REWARD PUSH" />
+
+  <TextView
+      android:id="@+id/rewardView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/rewardView1"
+      android:layout_marginTop="19dp"
+      android:layout_toLeftOf="@+id/reward_edit1"
+      android:text="Audience :" />
+
+  <TextView
+      android:id="@+id/rewardView3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignLeft="@+id/rewardView2"
+      android:layout_below="@+id/rewardView2"
+      android:layout_marginTop="16dp"
+      android:text="NO Of Push" />
+
+  <TextView
+      android:id="@+id/rewardView6"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignRight="@+id/reward_view8"
+      android:layout_below="@+id/rewards_radioGroup1"
+      android:text="Filters" />
+
+  <DatePicker
+      android:id="@+id/reward_datePicker1"
+      android:layout_width="15dp"
+      android:layout_height="15dp"
+      android:layout_alignBottom="@+id/reward_View9"
+      android:layout_alignLeft="@+id/rewards_radioGroup1"
+      android:layout_alignRight="@+id/rewards_radioGroup1"
+      android:layout_alignTop="@+id/reward_View9" />
+
+  <DatePicker
+      android:id="@+id/datePicker1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignBottom="@+id/rewardView10"
+      android:layout_alignParentRight="true"
+      android:layout_alignTop="@+id/rewardView10"
+      android:layout_toRightOf="@+id/rewardView5" />
+
+  <TextView
+      android:id="@+id/rewardView10"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentLeft="true"
+      android:text="Validity:To" />
+
+  <Button
+      android:id="@+id/reward_button1"
+      style="?android:attr/buttonStyleSmall"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignBottom="@+id/reward_scroller"
+      android:layout_alignParentRight="true"
+      android:text="DONE" />
+
+  <TextView
+      android:id="@+id/reward_View9"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignLeft="@+id/rewardView1"
+      android:layout_below="@+id/reward_scroller"
+      android:text="Validity :From" />
+
+</RelativeLayout>
