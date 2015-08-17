@@ -45,9 +45,24 @@ public class CampaignSummaryActivity extends Activity {
             TextView CSStartDate = (TextView) findViewById(R.id.cs_start_date);
             TextView CSEndDate = (TextView) findViewById(R.id.cs_end_date);
             CSCampaignName.setText(campaigns.get(0).getQuestion());
+            CSCampaignName.setVisibility(View.VISIBLE);
             CSStartDate.setText("Start Date:" + campaigns.get(0).getStartDate());
+            CSStartDate.setVisibility(View.VISIBLE);
             CSEndDate.setText("End Date:" + campaigns.get(0).getEndDate());
+            CSEndDate.setVisibility(View.VISIBLE);
             campaignId = campaigns.get(0).getCampaignId();
+
+            Button csStop = (Button) findViewById(R.id.cs_stopBtn);
+            Button csEdit = (Button) findViewById(R.id.cs_editBtn);
+            Button csDelete = (Button) findViewById(R.id.cs_deleteBtn);
+            Button csReward = (Button) findViewById(R.id.cs_rewardBtn);
+            Button csInsight = (Button) findViewById(R.id.cs_insightBtn);
+
+            csStop.setVisibility(View.VISIBLE);
+            csEdit.setVisibility(View.VISIBLE);
+            csDelete.setVisibility(View.VISIBLE);
+            csReward.setVisibility(View.VISIBLE);
+            csInsight.setVisibility(View.VISIBLE);
         }
         //Display all expired Campaigns
         //instantiate custom adapter

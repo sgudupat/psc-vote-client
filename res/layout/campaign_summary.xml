@@ -21,20 +21,23 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent" android:gravity="right">
             <Button
-                    android:id="@+id/button1"
+                    android:id="@+id/cs_stopBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Stop" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"/>
+                    android:text="Stop" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"
+                    android:visibility="invisible"/>
             <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/cs_editBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Edit" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"/>
+                    android:text="Edit" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"
+                    android:visibility="invisible"/>
             <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/cs_deleteBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Delete" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"/>
+                    android:text="Delete" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"
+                    android:visibility="invisible"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -45,12 +48,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="*" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"
-                    android:onClick="showRewardInfo"/>
+                    android:onClick="showRewardInfo" android:visibility="invisible"/>
             <Button
                     android:id="@+id/cs_insightBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="I" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"/>
+                    android:text="I" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"
+                    android:visibility="invisible"/>
         </LinearLayout>
         <TextView
                 android:id="@+id/cs_campaign_name"
@@ -59,7 +63,7 @@
                 android:maxLines="3"
                 android:text="campaign 1"
                 android:layout_column="1"
-                android:layout_span="4"/>
+                android:layout_span="4" android:visibility="invisible"/>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
@@ -71,14 +75,14 @@
                     android:maxLines="3"
                     android:text="Startddate:19/7/2015"
                     android:layout_column="1"
-                    android:layout_span="2"/>
+                    android:layout_span="2" android:visibility="invisible"/>
             <TextView
                     android:id="@+id/cs_end_date"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:maxLines="3"
                     android:text="Enddate:31/8/2015" android:layout_column="4"
-                    android:layout_span="2"/>
+                    android:layout_span="2" android:visibility="invisible"/>
         </LinearLayout>
         <Space
                 android:layout_width="match_parent"
