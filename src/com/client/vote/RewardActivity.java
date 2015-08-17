@@ -19,9 +19,9 @@ import java.util.ArrayList;
 
 public class RewardActivity extends Activity {
 
+    private static int RESULT_LOAD_IMG = 1;
     Bitmap bitmap;
     String imgPath, fileName;
-    private static int RESULT_LOAD_IMG = 1;
     String anchorName;
 
     @Override

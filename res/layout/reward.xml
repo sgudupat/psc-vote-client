@@ -8,178 +8,178 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
 
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-        <TextView
-                android:id="@+id/rewardView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Reward Push"/>
-        <TextView
-                android:id="@+id/rewardView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="19dp"
-                android:text="Audience :"/>
         <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" android:layout_gravity="right" android:gravity="right">
+                android:layout_height="fill_parent">
             <TextView
-                    android:id="@+id/rewardView3"
+                    android:id="@+id/rewardView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No Of Push" android:layout_marginRight="55dp"/>
-            <EditText
-                    android:id="@+id/rwd_pushLimitValue"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"/>
+                    android:layout_marginTop="16dp"
+                    android:text="Reward Push"/>
             <TextView
-                    android:id="@+id/rewardView4"
+                    android:id="@+id/rewardView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" / No Limits"/>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" android:gravity="right">
-            <TextView
-                    android:id="@+id/rewardView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Region" android:layout_marginRight="20dp"/>
-
-            <RadioGroup
-                    android:id="@+id/rwd_pushRegionGrp"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                <RadioButton
-                        android:id="@+id/rwd_pushRegion1"
+                    android:layout_marginTop="19dp"
+                    android:text="Audience :"/>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" android:layout_gravity="right" android:gravity="right">
+                <TextView
+                        android:id="@+id/rewardView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Global"/>
-
-                <RadioButton
-                        android:id="@+id/rwd_pushRegion2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:text="Client Country"/>
-            </RadioGroup>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" android:gravity="right">
-            <TextView
-                    android:id="@+id/rewardView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Filters" android:layout_marginRight="20dp"/>
-            <RadioGroup
-                    android:id="@+id/rwd_pushFilterGrp"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content">
-
-                <RadioButton
-                        android:id="@+id/rwd_pushFilter1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:text="To Respondents Only"/>
-
-                <RadioButton
-                        android:id="@+id/rwd_pushFilter2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="All App Users"/>
-            </RadioGroup>
-        </LinearLayout>
-        <TextView
-                android:id="@+id/rewardView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Reward Message"/>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" android:gravity="center_horizontal">
-            <ImageView
-                    android:id="@+id/reward_imageView1"
-                    android:layout_width="275dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/reward"/>
-            <Button
-                    android:id="@+id/reward_view7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="uploadImage"
-                    android:text="Upload" android:layout_gravity="bottom"/>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-            <TextView
-                    android:id="@+id/reward_view8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Description"/>
-
-            <ScrollView
-                    android:id="@+id/reward_scroller"
-                    android:layout_width="match_parent"
-                    android:layout_height="58dp"
-                    android:layout_marginTop="26dp"
-                    android:scrollbars="vertical">
-
+                        android:text="No Of Push" android:layout_marginRight="55dp"/>
                 <EditText
-                        android:id="@+id/reward_scrollView1"
-                        android:layout_width="match_parent"
+                        android:id="@+id/rwd_pushLimitValue"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"/>
-            </ScrollView>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                        android:textSize="15dp"/>
+                <TextView
+                        android:id="@+id/rewardView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" / No Limits"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" android:gravity="right">
+                <TextView
+                        android:id="@+id/rewardView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Region" android:layout_marginRight="20dp"/>
+
+                <RadioGroup
+                        android:id="@+id/rwd_pushRegionGrp"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                    <RadioButton
+                            android:id="@+id/rwd_pushRegion1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Global"/>
+
+                    <RadioButton
+                            android:id="@+id/rwd_pushRegion2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Client Country"/>
+                </RadioGroup>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" android:gravity="right">
+                <TextView
+                        android:id="@+id/rewardView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Filters" android:layout_marginRight="20dp"/>
+                <RadioGroup
+                        android:id="@+id/rwd_pushFilterGrp"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content">
+
+                    <RadioButton
+                            android:id="@+id/rwd_pushFilter1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="To Respondents Only"/>
+
+                    <RadioButton
+                            android:id="@+id/rwd_pushFilter2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="All App Users"/>
+                </RadioGroup>
+            </LinearLayout>
             <TextView
-                    android:id="@+id/reward_View9"
+                    android:id="@+id/rewardView7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Validity : From"/>
-            <EditText
-                    android:id="@+id/rwd_validityFrom"
-                    android:layout_width="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Reward Message"/>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" android:gravity="center_horizontal">
+                <ImageView
+                        android:id="@+id/reward_imageView1"
+                        android:layout_width="275dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/reward"/>
+                <Button
+                        android:id="@+id/reward_view7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="uploadImage"
+                        android:text="Upload" android:layout_gravity="bottom"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:id="@+id/reward_view8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"/>
+
+                <ScrollView
+                        android:id="@+id/reward_scroller"
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"
+                        android:layout_marginTop="26dp"
+                        android:scrollbars="vertical">
+
+                    <EditText
+                            android:id="@+id/reward_scrollView1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"/>
+                </ScrollView>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:id="@+id/reward_View9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Validity : From"/>
+                <EditText
+                        android:id="@+id/rwd_validityFrom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="YYYY-MM-DD" android:textSize="15dp"/>
+                <TextView
+                        android:id="@+id/rewardView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="To"/>
+                <EditText
+                        android:id="@+id/rwd_validityTo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="YYYY-MM-DD" android:textSize="15dp"/>
+            </LinearLayout>
+            <Button
+                    android:id="@+id/reward_button1"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:hint="YYYY-MM-DD" android:textSize="15dp"/>
-            <TextView
-                    android:id="@+id/rewardView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="To"/>
-            <EditText
-                    android:id="@+id/rwd_validityTo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="YYYY-MM-DD" android:textSize="15dp"/>
+                    android:onClick="createReward"
+                    android:text="Done" android:layout_marginTop="40dp" android:layout_gravity="center_horizontal"/>
         </LinearLayout>
-        <Button
-                android:id="@+id/reward_button1"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:onClick="createReward"
-                android:text="Done" android:layout_marginTop="40dp" android:layout_gravity="center_horizontal"/>
-    </LinearLayout>
     </ScrollView>
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.client.vote;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -94,6 +95,8 @@ public class ProfileActivity extends Activity {
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putString("country", countryOption);
                 editor.apply();
+                Intent intent = new Intent(this, AnchorSummaryActivity.class);
+                startActivity(intent);
             } else {
                 Toast.makeText(getApplicationContext(), "Update Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
             }

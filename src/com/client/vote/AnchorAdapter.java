@@ -11,9 +11,7 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 import com.client.vote.domain.Anchor;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class AnchorAdapter extends BaseAdapter implements ListAdapter {
     private ArrayList<Anchor> list = new ArrayList<Anchor>();

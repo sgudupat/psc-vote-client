@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.client.vote" android:versionCode="1" android:versionName="1.0">
+          package="com.client.vote" android:versionCode="2" android:versionName="1.0">
     <uses-sdk android:minSdkVersion="19"/>
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -13,17 +13,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".AnchorSummaryActivity" android:label="Anchor Summary"></activity>
+        <activity android:name=".AnchorSummaryActivity" android:label="Anchor Summary"/>
         <activity android:name="SignTabActivity" android:label="@string/app_name"/>
         <activity android:name=".CampaignSummaryActivity" android:label="@string/app_name"/>
         <activity android:name="InsightActivity" android:label="@string/app_name"/>
         <activity android:name="ProfileActivity" android:label="@string/app_name"/>
         <activity android:name="RegisterActivity" android:label="@string/app_name"/>
-        <activity android:name=".RegretActivity" android:label="@string/cancel"></activity>
-        <activity android:name=".ForgetPasswordActivity" android:label="@string/forget_password"></activity>
-        <activity android:name=".NewAnchorActivity" android:label="@string/new_anchor"></activity>
-        <activity android:name=".NewCampaignActivity" android:label="@string/new_campaign"></activity>
-         <activity android:name=".RewardActivity" android:label="@string/new_reward"></activity>
+        <activity android:name=".RegretActivity" android:label="@string/cancel"/>
+        <activity android:name=".ForgetPasswordActivity" android:label="@string/forget_password"/>
+        <activity android:name=".NewAnchorActivity" android:label="@string/new_anchor"/>
+        <activity android:name=".NewCampaignActivity" android:label="@string/new_campaign"/>
+        <activity android:name=".RewardActivity" android:label="@string/new_reward"/>
 
     </application>
 </manifest>
