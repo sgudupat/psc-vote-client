@@ -50,9 +50,9 @@ public class HomePageActivity extends Activity {
                 editor.putString("clientName", (String) jsonobject.get("client_name"));
                 editor.putString("emailAddress", (String) jsonobject.get("email_address"));
                 editor.putString("websiteURL", (String) jsonobject.get("website_url"));
-                editor.putString("about", (String) jsonobject.get("about"));  
-                editor.putString("country", (String) jsonobject.get("country")); 
-                                                                            
+                editor.putString("about", (String) jsonobject.get("about"));
+                editor.putString("country", (String) jsonobject.get("country"));
+
                 editor.commit();
                 Intent intent = new Intent(context, SignTabActivity.class);
                 startActivity(intent);

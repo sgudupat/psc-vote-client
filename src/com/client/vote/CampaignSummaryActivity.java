@@ -10,11 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import com.client.vote.CampaignAdapter.ButtonActionListener;
+import com.client.vote.common.CampaignUtil;
 import com.client.vote.common.SimpleHttpClient;
 import com.client.vote.domain.Campaign;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
@@ -22,6 +20,7 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class CampaignSummaryActivity extends Activity {
@@ -47,26 +46,35 @@ public class CampaignSummaryActivity extends Activity {
             TextView CSCampaignName = (TextView) findViewById(R.id.cs_campaign_name);
             TextView CSStartDate = (TextView) findViewById(R.id.cs_start_date);
             TextView CSEndDate = (TextView) findViewById(R.id.cs_end_date);
+            TextView CSMessage = (TextView) findViewById(R.id.cs_statusMsg);
+            Date endDate = campaigns.get(0).getEndDate();
             CSCampaignName.setText(campaigns.get(0).getQuestion());
             CSCampaignName.setVisibility(View.VISIBLE);
             CSStartDate.setText("Start Date:" + campaigns.get(0).getStartDate());
             CSStartDate.setVisibility(View.VISIBLE);
-            CSEndDate.setText("End Date:" + campaigns.get(0).getEndDate());
+            CSEndDate.setText("End Date:" + endDate);
             CSEndDate.setVisibility(View.VISIBLE);
             campaignId = campaigns.get(0).getCampaignId();
-
+            String status = campaigns.get(0).getStatus();
             Button csStop = (Button) findViewById(R.id.cs_stopBtn);
             Button csEdit = (Button) findViewById(R.id.cs_editBtn);
             Button csDelete = (Button) findViewById(R.id.cs_deleteBtn);
             Button csReward = (Button) findViewById(R.id.cs_rewardBtn);
             Button csInsight = (Button) findViewById(R.id.cs_insightBtn);
-            
-            csStop.setOnClickListener(new ButtonActionListener( campaignId,"STOPPED"));
-            csDelete.setOnClickListener(new ButtonActionListener( campaignId,"DELETED"));  
 
-            csStop.setVisibility(View.VISIBLE);
-            csEdit.setVisibility(View.VISIBLE);
-            csDelete.setVisibility(View.VISIBLE);
+            csStop.setOnClickListener(new ButtonActionListener(campaignId, "STOPPED"));
+            csDelete.setOnClickListener(new ButtonActionListener(campaignId, "DELETED"));
+
+            if (!CampaignUtil.isCampaignStopped(status, endDate)) {
+                csStop.setVisibility(View.VISIBLE);
+            }
+            if (!CampaignUtil.isCampaignExpired(endDate)) {
+                csDelete.setVisibility(View.VISIBLE);
+            }
+            if (CampaignUtil.isCampaignEditable(status, endDate)) {
+                csEdit.setVisibility(View.VISIBLE);
+            }
+            CSMessage.setText(CampaignUtil.campaignStatusMessage(status, endDate));
             csReward.setVisibility(View.VISIBLE);
             csInsight.setVisibility(View.VISIBLE);
         }
@@ -138,32 +146,29 @@ public class CampaignSummaryActivity extends Activity {
         intent.putExtra("campaignId", campaignId);
         startActivity(intent);
     }
-  public class ButtonActionListener implements View.OnClickListener {
-        
+
+    public class ButtonActionListener implements View.OnClickListener {
+
         private String campaignId;
         private String message;
 
-        public ButtonActionListener( String campaignId,String message) {
-          
+        public ButtonActionListener(String campaignId, String message) {
             this.campaignId = campaignId;
             this.message = message;
         }
 
         @Override
         public void onClick(View v) {
-            Log.i("campaignid",campaignId);
+            Log.i("campaignid", campaignId);
             final ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
-            postParameters.add(new BasicNameValuePair("campaignId",campaignId));
-            postParameters.add(new BasicNameValuePair("status",message));
-           
+            postParameters.add(new BasicNameValuePair("campaignId", campaignId));
+            postParameters.add(new BasicNameValuePair("status", message));
             try {
                 String response = SimpleHttpClient.executeHttpPost("/updateCampaignStatus", postParameters);
                 Log.i("Response:", response);
-                
             } catch (Exception e) {
                 Log.e("register", e.getMessage() + "");
             }
         }
     }
-
 }

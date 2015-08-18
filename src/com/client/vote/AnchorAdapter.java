@@ -2,7 +2,6 @@ package com.client.vote;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,15 +10,12 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.client.vote.common.SimpleHttpClient;
 import com.client.vote.domain.Anchor;
-
-import java.util.ArrayList;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+
+import java.util.ArrayList;
 
 public class AnchorAdapter extends BaseAdapter implements ListAdapter {
     private ArrayList<Anchor> list = new ArrayList<Anchor>();
@@ -52,35 +48,34 @@ public class AnchorAdapter extends BaseAdapter implements ListAdapter {
         //Handle buttons and add onClickListeners
         Button moreBtn = (Button) view.findViewById(R.id.more_btn);
         Button deleteBtn = (Button) view.findViewById(R.id.delete_btn);
-        
+
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //do something
-               //or some other task
-            	Log.i("delete anchor id",list.get(position).getAnchorName().toString());
-            	
-            	 try {
-                     final ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
-                     postParameters.add(new BasicNameValuePair("anchorId", list.get(position).getAnchorName().toString()));
-                    
-                     String response = SimpleHttpClient.executeHttpPost("/deleteAnchor", postParameters);
-                     Log.i("Response:", response);
-                     String result="success";
-                     if(response.contains("success")){
-                    	 Log.i("inside  if loop", "removing from list started");
-                    	 list.remove(position);
-                    	 notifyDataSetChanged();
-                     }
-                   
-                     
-                 } catch (Exception e) {
-                     Log.e("register", e.getMessage() + "");
-                     //Toast.makeText(getApplicationContext(), "Delete Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
-                 }
-                
-                
-                
+                //or some other task
+                Log.i("delete anchor id", list.get(position).getAnchorName().toString());
+
+                try {
+                    final ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+                    postParameters.add(new BasicNameValuePair("anchorId", list.get(position).getAnchorName().toString()));
+
+                    String response = SimpleHttpClient.executeHttpPost("/deleteAnchor", postParameters);
+                    Log.i("Response:", response);
+                    String result = "success";
+                    if (response.contains("success")) {
+                        Log.i("inside  if loop", "removing from list started");
+                        list.remove(position);
+                        notifyDataSetChanged();
+                    }
+
+
+                } catch (Exception e) {
+                    Log.e("register", e.getMessage() + "");
+                    //Toast.makeText(getApplicationContext(), "Delete Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
+                }
+
+
                 //notifyDataSetChanged();
             }
         });
@@ -90,9 +85,8 @@ public class AnchorAdapter extends BaseAdapter implements ListAdapter {
         return view;
     }
 
-   
 
-	@Override
+    @Override
     public long getItemId(int position) {
         return 0;
     }
