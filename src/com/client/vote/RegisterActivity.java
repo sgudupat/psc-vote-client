@@ -81,8 +81,9 @@ public class RegisterActivity extends Activity {
                                 JSONObject jsonobject = new JSONObject(response);
                                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
                                 SharedPreferences.Editor editor = prefs.edit();
-                                editor.putString("clientId", (String) jsonobject.get("client_id"));                                
-                                editor.putString("emailAddress", (String) jsonobject.get("email_address"));                                 
+                                editor.putString("clientId", (String) jsonobject.get("client_id"));
+                                editor.putString("emailAddress", (String) jsonobject.get("email_address"));
+                                editor.commit();
                                 Intent intent = new Intent(context, SignTabActivity.class);
                                 startActivity(intent);
                                 Log.i("inside otp if loop", "search activity started");
