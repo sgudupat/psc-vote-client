@@ -110,8 +110,9 @@ public class CampaignSummaryActivity extends Activity {
                 String question = jsonobject.getString("question");
                 String startDate = jsonobject.getString("start_date");
                 String endDate = jsonobject.getString("end_date");
+                String status = jsonobject.getString("status");
                 Log.i("campaign name", campaignId);
-                items.add(new Campaign(campaignId, anchorName, question, dateFormat.parse(startDate), dateFormat.parse(endDate)));
+                items.add(new Campaign(campaignId, anchorName, question, dateFormat.parse(startDate), dateFormat.parse(endDate), status));
             }
         } catch (Exception e) {
         }

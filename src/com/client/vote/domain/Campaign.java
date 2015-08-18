@@ -9,13 +9,15 @@ public class Campaign {
     String question;
     Date startDate;
     Date endDate;
+    String status;
 
-    public Campaign(String campaignId, String anchorName, String question, Date startDate, Date endDate) {
+    public Campaign(String campaignId, String anchorName, String question, Date startDate, Date endDate, String status) {
         this.campaignId = campaignId;
         this.anchorName = anchorName;
         this.question = question;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.status = status;
     }
 
     public String getCampaignId() {
@@ -58,6 +60,14 @@ public class Campaign {
         this.anchorName = anchorName;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Campaign{" +
@@ -66,6 +76,7 @@ public class Campaign {
                 ", question='" + question + '\'' +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

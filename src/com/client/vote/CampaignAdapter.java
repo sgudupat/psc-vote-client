@@ -46,6 +46,18 @@ public class CampaignAdapter extends BaseAdapter implements ListAdapter {
         startDate.setText("Start Date : " + list.get(position).getStartDate());
         endDate.setText("End Date : " + list.get(position).getEndDate());
 
+        Button ciStop = (Button) view.findViewById(R.id.ci_stopBtn);
+        Button ciEdit = (Button) view.findViewById(R.id.ci_editBtn);
+        Button ciDelete = (Button) view.findViewById(R.id.ci_deleteBtn);
+        Button ciReward = (Button) view.findViewById(R.id.ci_rewardBtn);
+        Button ciInsight = (Button) view.findViewById(R.id.ci_insightBtn);
+
+        ciStop.setVisibility(View.VISIBLE);
+        ciEdit.setVisibility(View.VISIBLE);
+        ciDelete.setVisibility(View.VISIBLE);
+        ciReward.setVisibility(View.VISIBLE);
+        ciInsight.setVisibility(View.VISIBLE);
+
         Button rewardInfoBtn = (Button) view.findViewById(R.id.ci_rewardBtn);
         rewardInfoBtn.setOnClickListener(new ShowRewardInfoListener(list.get(position).getAnchorName(), list.get(position).getCampaignId()));
         return view;
