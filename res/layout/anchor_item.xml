@@ -29,13 +29,14 @@
             android:text="Cgn"/>
 
     <Button
-            android:id="@+id/more_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/show_campaign_btn"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="155dp"
-            android:text="More"/>
+        android:id="@+id/more_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="155dp"
+        android:layout_toLeftOf="@id/show_campaign_btn"
+        android:text="More"
+        android:visibility="invisible" />
 
 </RelativeLayout>

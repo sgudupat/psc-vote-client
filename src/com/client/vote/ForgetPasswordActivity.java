@@ -10,9 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.client.vote.common.SimpleHttpClient;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -25,7 +23,6 @@ import java.util.Random;
 public class ForgetPasswordActivity extends Activity {
     String response = "";
     String semail = "";
-    String clientId="";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +31,11 @@ public class ForgetPasswordActivity extends Activity {
         setContentView(R.layout.forget_password);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         preferences.edit().clear().commit();
+    }
+    public void backSignin(View view)
+    {
+    	Intent intent = new Intent(this, HomePageActivity.class);
+    	startActivity(intent);
     }
 
     public void resetPassword(View view) {
@@ -52,14 +54,11 @@ public class ForgetPasswordActivity extends Activity {
         try {
             JSONObject jsonObj = new JSONObject(response);
             semail = jsonObj.getString("email_address");
-            clientId=jsonObj.getString("client_id");
             Log.i("email name", semail);
         } catch (JSONException e) {
         }
         if (TextUtils.equals(email.getText().toString(), semail)) {
-            String chars = "abcdefghijklmnopqrstuvwxyz"
-                    + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                    + "0123456789";
+            String chars = "abcdefghijklmanopqr";
             final int PW_LENGTH = 16;
             Random rnd = new SecureRandom();
             StringBuilder pass = new StringBuilder();
@@ -68,32 +67,9 @@ public class ForgetPasswordActivity extends Activity {
             }
             Log.i("link password", pass.toString());
             String value = pass.toString();
-            try {
-                final ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
-                postParameters.add(new BasicNameValuePair("clientId", clientId));
-                postParameters.add(new BasicNameValuePair("passwordCode",value));
-                response = SimpleHttpClient.executeHttpPost("/updateForgotPasswordCode", postParameters);
-                Log.i("key value Response:", response);
-            } catch (Exception e) {
-                Log.e("register", e.getMessage() + "");
-                Toast.makeText(getApplicationContext(), "client key update  Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
-            }
-            
-            String result="success";
-            if(TextUtils.equals(response, result)){
-            	 Log.i("email sending", "email sending");
             String link = "http://52.74.246.67:8080/vote/forgotPassword.jsp?key=" + value;
             Log.i("password link", link);
             new LongRunningGetIO(email.getText().toString(), link).execute();
-            }
-            
         }
-    }
-    public void cancel(View view) {
-    	
-    	 Intent intent = new Intent(this, HomePageActivity.class);
-         startActivity(intent);
-
-    	
     }
 }
