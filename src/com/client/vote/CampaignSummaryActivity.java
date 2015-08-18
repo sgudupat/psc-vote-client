@@ -166,6 +166,9 @@ public class CampaignSummaryActivity extends Activity {
             try {
                 String response = SimpleHttpClient.executeHttpPost("/updateCampaignStatus", postParameters);
                 Log.i("Response:", response);
+                Intent intent = getIntent();
+                finish();
+                startActivity(intent);
             } catch (Exception e) {
                 Log.e("register", e.getMessage() + "");
             }

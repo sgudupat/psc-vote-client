@@ -46,9 +46,7 @@ public class AnchorAdapter extends BaseAdapter implements ListAdapter {
         listItemText.setText(list.get(position).getAnchorName());
 
         //Handle buttons and add onClickListeners
-        Button moreBtn = (Button) view.findViewById(R.id.more_btn);
         Button deleteBtn = (Button) view.findViewById(R.id.delete_btn);
-
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,24 +60,16 @@ public class AnchorAdapter extends BaseAdapter implements ListAdapter {
 
                     String response = SimpleHttpClient.executeHttpPost("/deleteAnchor", postParameters);
                     Log.i("Response:", response);
-                    String result = "success";
                     if (response.contains("success")) {
                         Log.i("inside  if loop", "removing from list started");
                         list.remove(position);
                         notifyDataSetChanged();
                     }
-
-
                 } catch (Exception e) {
                     Log.e("register", e.getMessage() + "");
-                    //Toast.makeText(getApplicationContext(), "Delete Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
                 }
-
-
-                //notifyDataSetChanged();
             }
         });
-
         Button campaignBtn = (Button) view.findViewById(R.id.show_campaign_btn);
         campaignBtn.setOnClickListener(new ShowCampaignListener(list.get(position).getAnchorName()));
         return view;
