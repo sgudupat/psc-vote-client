@@ -1,6 +1,7 @@
 package com.client.vote;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -30,6 +31,11 @@ public class ForgetPasswordActivity extends Activity {
         setContentView(R.layout.forget_password);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         preferences.edit().clear().commit();
+    }
+    public void backSignin(View view)
+    {
+    	Intent intent = new Intent(this, HomePageActivity.class);
+    	startActivity(intent);
     }
 
     public void resetPassword(View view) {

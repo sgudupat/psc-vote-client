@@ -26,6 +26,11 @@ public class NewAnchorActivity extends Activity {
         Log.i("NewAnchorActivity", "inside new anchor page");
         setContentView(R.layout.create_anchor);
     }
+    public void signTab(View view)
+    {
+    	Intent intent = new Intent(this, SignTabActivity.class);
+    	startActivity(intent);
+    }
 
     public void checkAvailability(View view) {
         Log.i("checkAvailability:", "Start");

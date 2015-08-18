@@ -57,18 +57,25 @@
             android:hint="$0.00"/>
 
     <Button
-            android:id="@+id/newanchor_button1"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="DONE" android:layout_alignParentBottom="true" android:layout_alignStart="@+id/newAnchor3"
-            android:layout_marginBottom="73dp" android:onClick="createAnchor"/>
+        android:id="@+id/newanchor_button1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/newAnchor3"
+        android:layout_marginBottom="73dp"
+        android:layout_toLeftOf="@+id/checked_newanchor1"
+        android:onClick="createAnchor"
+        android:text="Done" />
 
     <Button
-            android:id="@+id/newanchor_button2"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="BACK"
-            android:layout_alignTop="@+id/newanchor_button1" android:layout_alignEnd="@+id/checked_newanchor1"/>
+        android:id="@+id/newanchor_button2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/checked_newanchor1"
+        android:layout_alignTop="@+id/newanchor_button1"
+        android:onClick="signTab"
+        android:text="Cancel" />
+
     <TextView
             android:layout_width="150dp"
             android:layout_height="wrap_content"
