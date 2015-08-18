@@ -45,13 +45,14 @@
                     android:layout_height="wrap_content"
                     android:text="Delete" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"
                     android:visibility="invisible"/>
+
               <TextView
-                        android:id="@+id/ltextView3"
-                        android:layout_width="108dp"
-                        android:layout_height="wrap_content"
-                        android:maxLines="3"
-                        android:gravity="center" android:layout_gravity="center_vertical"/>
-           
+                  android:id="@+id/ltextView3"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_vertical"
+                  android:gravity="center"
+                  android:maxLines="3" />
           
         </LinearLayout>
         <LinearLayout

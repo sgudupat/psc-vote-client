@@ -145,19 +145,21 @@
     </ScrollView>
 
     <Button
-            android:id="@+id/cs_stopBtn"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/profile_done" android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true" android:onClick="profileUpdate"/>
+        android:id="@+id/cs_stopBtn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/cp_CountryGroup"
+        android:onClick="profileUpdate"
+        android:text="@string/profile_done" />
 
     <Button
-            android:id="@+id/button2"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/cp_client_name"
-            android:text="@string/profile_back"/>
-
+        android:id="@+id/button2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/cp_client_name"
+        android:text="@string/profile_back" />
 
 </RelativeLayout>
