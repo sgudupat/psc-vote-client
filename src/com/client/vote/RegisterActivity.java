@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.client.vote.common.SimpleHttpClient;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONObject;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -77,6 +78,11 @@ public class RegisterActivity extends Activity {
                                 postParameters.add(new BasicNameValuePair("emailAddress", email.getText().toString()));
                                 String response = SimpleHttpClient.executeHttpPost("/registerClient", postParameters);
                                 Log.i("Response:", response);
+                                JSONObject jsonobject = new JSONObject(response);
+                                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+                                SharedPreferences.Editor editor = prefs.edit();
+                                editor.putString("clientId", (String) jsonobject.get("client_id"));                                
+                                editor.putString("emailAddress", (String) jsonobject.get("email_address"));                                 
                                 Intent intent = new Intent(context, SignTabActivity.class);
                                 startActivity(intent);
                                 Log.i("inside otp if loop", "search activity started");
