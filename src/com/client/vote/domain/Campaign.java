@@ -15,6 +15,9 @@ public class Campaign {
     String regionCountry;
     List<Option> options;
 
+    public Campaign() {
+    }
+
     public Campaign(String campaignId, String anchorName, String question, Date startDate, Date endDate, String status) {
         this.campaignId = campaignId;
         this.anchorName = anchorName;

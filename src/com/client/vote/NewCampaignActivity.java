@@ -26,7 +26,7 @@ public class NewCampaignActivity extends Activity {
 
     String anchorName;
     String modify = "";
-    Campaign campaign;
+    Campaign campaign = new Campaign();
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,52 @@ public class NewCampaignActivity extends Activity {
             String campaignId = intent.getStringExtra("campaignId");
             getCampaign(campaignId);
             //Load objects and make respective fields non editable
+            EditText ncQuestion = (EditText) findViewById(R.id.campaign_question);
+            ncQuestion.setText(campaign.getQuestion());
+            ncQuestion.setEnabled(false);
+            EditText ncStartDate = (EditText) findViewById(R.id.campaign_startdate);
+            ncStartDate.setText(sdf.format(campaign.getStartDate()));
+            EditText ncEndDate = (EditText) findViewById(R.id.campaign_enddate);
+            ncEndDate.setText(sdf.format(campaign.getEndDate()));
+            EditText ncRewardInfo = (EditText) findViewById(R.id.rewardEdit);
+            ncRewardInfo.setText(campaign.getRewardInfo());
+            //RadioGroup ncRegion = (RadioGroup) findViewById(R.id.createcampaignGroup2);
+            String regionCountry = campaign.getRegionCountry();
+            if (regionCountry.equalsIgnoreCase("Global")) {
+                RadioButton r1 = (RadioButton) findViewById(R.id.region_radio1);
+                r1.setChecked(true);
+            } else {
+                RadioButton r2 = (RadioButton) findViewById(R.id.regoin_radio2);
+                r2.setChecked(true);
+            }
+            List<Option> options = campaign.getOptions();
+            for (int i = 0; i < options.size(); i++) {
+                if (i == 0) {
+                    EditText option1 = (EditText) findViewById(R.id.optionValue1);
+                    option1.setText(options.get(i).getOptionValue());
+                    option1.setEnabled(false);
+                }
+                if (i == 1) {
+                    EditText option2 = (EditText) findViewById(R.id.optionValue2);
+                    option2.setText(options.get(i).getOptionValue());
+                    option2.setEnabled(false);
+                }
+                if (i == 2) {
+                    EditText option3 = (EditText) findViewById(R.id.optionValue3);
+                    option3.setText(options.get(i).getOptionValue());
+                    option3.setEnabled(false);
+                }
+                if (i == 3) {
+                    EditText option4 = (EditText) findViewById(R.id.optionValue4);
+                    option4.setText(options.get(i).getOptionValue());
+                    option4.setEnabled(false);
+                }
+                if (i == 4) {
+                    EditText option5 = (EditText) findViewById(R.id.optionValue5);
+                    option5.setText(options.get(i).getOptionValue());
+                    option5.setEnabled(false);
+                }
+            }
         }
     }
 
@@ -59,32 +105,56 @@ public class NewCampaignActivity extends Activity {
         EditText optionValue3 = (EditText) findViewById(R.id.optionValue3);
         EditText optionValue4 = (EditText) findViewById(R.id.optionValue4);
         EditText optionValue5 = (EditText) findViewById(R.id.optionValue5);
-        try {
-            final ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
-            postParameters.add(new BasicNameValuePair("anchorId", anchorName));
-            postParameters.add(new BasicNameValuePair("question", question.getText().toString()));
-            postParameters.add(new BasicNameValuePair("startDate", startDate.getText().toString()));
-            postParameters.add(new BasicNameValuePair("endDate", endDate.getText().toString()));
-            postParameters.add(new BasicNameValuePair("region", regionValue));
-            postParameters.add(new BasicNameValuePair("rewardInfo", rewardInfo.getText().toString()));
-            postParameters.add(new BasicNameValuePair("optionValue1", optionValue1.getText().toString()));
-            postParameters.add(new BasicNameValuePair("optionValue2", optionValue2.getText().toString()));
-            postParameters.add(new BasicNameValuePair("optionValue3", optionValue3.getText().toString()));
-            postParameters.add(new BasicNameValuePair("optionValue4", optionValue4.getText().toString()));
-            postParameters.add(new BasicNameValuePair("optionValue5", optionValue5.getText().toString()));
+        if (TextUtils.equals(modify, "Y")) {
+            try {
+                final ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+                postParameters.add(new BasicNameValuePair("campaignId", campaign.getCampaignId()));
+                postParameters.add(new BasicNameValuePair("startDate", startDate.getText().toString()));
+                postParameters.add(new BasicNameValuePair("endDate", endDate.getText().toString()));
+                postParameters.add(new BasicNameValuePair("region", regionValue));
+                postParameters.add(new BasicNameValuePair("rewardInfo", rewardInfo.getText().toString()));
 
-            String response = SimpleHttpClient.executeHttpPost("/createCampaign", postParameters);
-            Log.i("Response:", response);
-            if (response.contains("success")) {
-                Intent intent = new Intent(this, CampaignSummaryActivity.class);
-                intent.putExtra("anchorName", anchorName);
-                startActivity(intent);
-            } else {
+                String response = SimpleHttpClient.executeHttpPost("/modifyCampaign", postParameters);
+                Log.i("Response:", response);
+                if (response.contains("success")) {
+                    Intent intent = new Intent(this, CampaignSummaryActivity.class);
+                    intent.putExtra("anchorName", anchorName);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Creation Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
+                }
+            } catch (Exception e) {
+                Log.e("createAnchor", e.getMessage() + "");
                 Toast.makeText(getApplicationContext(), "Creation Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
             }
-        } catch (Exception e) {
-            Log.e("createAnchor", e.getMessage() + "");
-            Toast.makeText(getApplicationContext(), "Creation Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
+        } else {
+            try {
+                final ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+                postParameters.add(new BasicNameValuePair("anchorId", anchorName));
+                postParameters.add(new BasicNameValuePair("question", question.getText().toString()));
+                postParameters.add(new BasicNameValuePair("startDate", startDate.getText().toString()));
+                postParameters.add(new BasicNameValuePair("endDate", endDate.getText().toString()));
+                postParameters.add(new BasicNameValuePair("region", regionValue));
+                postParameters.add(new BasicNameValuePair("rewardInfo", rewardInfo.getText().toString()));
+                postParameters.add(new BasicNameValuePair("optionValue1", optionValue1.getText().toString()));
+                postParameters.add(new BasicNameValuePair("optionValue2", optionValue2.getText().toString()));
+                postParameters.add(new BasicNameValuePair("optionValue3", optionValue3.getText().toString()));
+                postParameters.add(new BasicNameValuePair("optionValue4", optionValue4.getText().toString()));
+                postParameters.add(new BasicNameValuePair("optionValue5", optionValue5.getText().toString()));
+
+                String response = SimpleHttpClient.executeHttpPost("/createCampaign", postParameters);
+                Log.i("Response:", response);
+                if (response.contains("success")) {
+                    Intent intent = new Intent(this, CampaignSummaryActivity.class);
+                    intent.putExtra("anchorName", anchorName);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Creation Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
+                }
+            } catch (Exception e) {
+                Log.e("createAnchor", e.getMessage() + "");
+                Toast.makeText(getApplicationContext(), "Creation Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -109,7 +179,7 @@ public class NewCampaignActivity extends Activity {
             campaign.setRewardInfo(jsonobject.getString("rewardInfo"));
             campaign.setRegionCountry(jsonobject.getString("regionCountry"));
             List<Option> options = new ArrayList<Option>();
-            String optionsStr  = jsonobject.getString("options");
+            String optionsStr = jsonobject.getString("options");
             JSONArray jsonArray = new JSONArray(optionsStr);
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject option = jsonArray.getJSONObject(i);
