@@ -13,6 +13,6 @@
             android:layout_alignParentRight="true"
             android:layout_below="@+id/textView1"
             android:layout_marginTop="40dp"
-            android:text="TextView" android:inputType="textMultiLine"/>
+            android:text="This is a premium service and will be initiated soon. Stay connected ..." android:inputType="textMultiLine"/>
 
 </RelativeLayout>
