@@ -20,6 +20,13 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent" android:gravity="right">
+                  <Button
+                    android:id="@+id/lbutton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="more/less"
+                    android:visibility="invisible" />
             <Button
                     android:id="@+id/cs_stopBtn"
                     android:layout_width="wrap_content"
@@ -38,6 +45,14 @@
                     android:layout_height="wrap_content"
                     android:text="Delete" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"
                     android:visibility="invisible"/>
+              <TextView
+                        android:id="@+id/ltextView3"
+                        android:layout_width="108dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="3"
+                        android:gravity="center" android:layout_gravity="center_vertical"/>
+           
+          
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"

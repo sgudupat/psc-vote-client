@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
     <TableLayout
-            android:id="@+id/tableLayout1"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+        android:id="@+id/tableLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
 
         <TableRow
-                android:id="@+id/ltableRow1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dip" android:gravity="right">
+            android:id="@+id/ltableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:padding="5dip" >
+
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" android:gravity="right">
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="right"
+                android:orientation="horizontal" >
 
                 <Button
                     android:id="@+id/lbutton1"
@@ -25,64 +29,108 @@
                     android:text="more/less"
                     android:visibility="invisible" />
 
+                <Button
+                    android:id="@+id/cs_stopBtn"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="Stop"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/cs_editBtn"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="Edit"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/cs_deleteBtn"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="Delete"
+                    android:visibility="invisible" />
+
                 <TextView
-                        android:id="@+id/ltextView3"
-                        android:layout_width="108dp"
-                        android:layout_height="wrap_content"
-                        android:maxLines="3"
-                        android:text="Expired" android:gravity="center" android:layout_gravity="center_vertical"/>
-            </LinearLayout>
-        </TableRow>
-        <TableRow
-                android:id="@+id/ltableRow2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dip" android:gravity="right">
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" android:gravity="right">
-                <Button
-                        android:id="@+id/ci_rewardBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="*" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"/>
-                <Button
-                        android:id="@+id/ci_insightBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="I" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"/>
-            </LinearLayout>
-        </TableRow>
-        <TableRow
-                android:id="@+id/ltableRow3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dip">
-            <TextView
-                    android:id="@+id/ltextView2"
+                    android:id="@+id/ltextView3"
                     android:layout_width="108dp"
                     android:layout_height="wrap_content"
-                    android:maxLines="3"
-                    android:hint="Campaign"/>
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:maxLines="3" />
+            </LinearLayout>
         </TableRow>
+
         <TableRow
-                android:id="@+id/ltableRow4"
-                android:layout_width="wrap_content"
+            android:id="@+id/ltableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:padding="5dip" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="right"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/ci_rewardBtn"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="*" />
+
+                <Button
+                    android:id="@+id/ci_insightBtn"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="I" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ltableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip" >
+
+            <TextView
+                android:id="@+id/ltextView2"
+                android:layout_width="108dp"
                 android:layout_height="wrap_content"
-                android:padding="5dip">
+                android:hint="Campaign"
+                android:maxLines="3" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ltableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip" >
+
             <TextView
-                    android:id="@+id/ltextView4"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:maxLines="3"
-                    android:hint="Startddate:19/7/2015"/>
+                android:id="@+id/ltextView4"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="Startddate:19/7/2015"
+                android:maxLines="3" />
+
             <TextView
-                    android:id="@+id/ltextView5"
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:maxLines="3"
-                    android:hint="Enddate:31/8/2015"/>
+                android:id="@+id/ltextView5"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:hint="Enddate:31/8/2015"
+                android:maxLines="3" />
         </TableRow>
     </TableLayout>
+
 </RelativeLayout>
