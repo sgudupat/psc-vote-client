@@ -147,12 +147,21 @@ public class CampaignSummaryActivity extends Activity {
         startActivity(intent);
     }
 
+    public void modifyCampaign(View view) {
+        Intent intent = new Intent(this, NewCampaignActivity.class);
+        intent.putExtra("anchorName", anchorName);
+        intent.putExtra("campaignId", campaignId);
+        intent.putExtra("modify", "Y");
+        startActivity(intent);
+    }
+
     public class ButtonActionListener implements View.OnClickListener {
 
         private String campaignId;
         private String message;
 
         public ButtonActionListener(String campaignId, String message) {
+
             this.campaignId = campaignId;
             this.message = message;
         }

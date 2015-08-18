@@ -38,7 +38,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Edit" android:layout_gravity="right" style="?android:attr/buttonStyleSmall"
-                    android:visibility="invisible"/>
+                    android:visibility="invisible" android:onClick="modifyCampaign"/>
             <Button
                     android:id="@+id/cs_deleteBtn"
                     android:layout_width="wrap_content"

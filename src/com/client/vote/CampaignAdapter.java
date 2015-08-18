@@ -52,7 +52,6 @@ public class CampaignAdapter extends BaseAdapter implements ListAdapter {
         startDate.setText("Start Date : " + list.get(position).getStartDate());
         Date endDateValue = list.get(position).getEndDate();
         endDate.setText("End Date : " + endDateValue);
-        String campaignId = list.get(position).getCampaignId();
         Button ciStop = (Button) view.findViewById(R.id.ci_stopBtn);
         Button ciEdit = (Button) view.findViewById(R.id.ci_editBtn);
         Button ciDelete = (Button) view.findViewById(R.id.ci_deleteBtn);
@@ -63,9 +62,7 @@ public class CampaignAdapter extends BaseAdapter implements ListAdapter {
         ciEdit.setVisibility(View.INVISIBLE);
 
         String status = list.get(position).getStatus();
-        Log.i("campaignId::", campaignId);
-        Log.i("Question::", list.get(position).getQuestion());
-        Log.i("Status::", status);
+
         if (!CampaignUtil.isCampaignStopped(status, endDateValue)) {
             ciStop.setVisibility(View.VISIBLE);
         }
@@ -73,16 +70,20 @@ public class CampaignAdapter extends BaseAdapter implements ListAdapter {
             ciDelete.setVisibility(View.VISIBLE);
         }
         if (CampaignUtil.isCampaignEditable(status, endDateValue)) {
-            ciStop.setVisibility(View.VISIBLE);
+            ciEdit.setVisibility(View.VISIBLE);
         }
         TextView CIMessage = (TextView) view.findViewById(R.id.ci_statusMsg);
         CIMessage.setText(CampaignUtil.campaignStatusMessage(status, endDateValue));
-
         ciReward.setVisibility(View.VISIBLE);
         ciInsight.setVisibility(View.VISIBLE);
-        ciStop.setOnClickListener(new ButtonActionListener(list.get(position).getAnchorName(), list.get(position).getCampaignId(), "STOPPED"));
-        ciDelete.setOnClickListener(new ButtonActionListener(list.get(position).getAnchorName(), list.get(position).getCampaignId(), "DELETED"));
-        ciReward.setOnClickListener(new ShowRewardInfoListener(list.get(position).getAnchorName(), list.get(position).getCampaignId()));
+
+        String anchorName = list.get(position).getAnchorName();
+        String campaignId = list.get(position).getCampaignId();
+
+        ciStop.setOnClickListener(new ButtonActionListener(anchorName, campaignId, "STOPPED"));
+        ciDelete.setOnClickListener(new ButtonActionListener(anchorName, campaignId, "DELETED"));
+        ciEdit.setOnClickListener(new ModifyCampaignListener(anchorName, campaignId));
+        ciReward.setOnClickListener(new ShowRewardInfoListener(anchorName, campaignId));
         return view;
     }
 
@@ -109,8 +110,26 @@ public class CampaignAdapter extends BaseAdapter implements ListAdapter {
         }
     }
 
-    public class ButtonActionListener implements View.OnClickListener {
+    public class ModifyCampaignListener implements View.OnClickListener {
+        private String anchorName;
+        private String campaignId;
 
+        public ModifyCampaignListener(String anchorName, String campaignId) {
+            this.anchorName = anchorName;
+            this.campaignId = campaignId;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(context, NewCampaignActivity.class);
+            intent.putExtra("anchorName", anchorName);
+            intent.putExtra("campaignId", campaignId);
+            intent.putExtra("modify", "Y");
+            context.startActivity(intent);
+        }
+    }
+
+    public class ButtonActionListener implements View.OnClickListener {
         private String anchorName;
         private String campaignId;
         private String message;

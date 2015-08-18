@@ -1,6 +1,7 @@
 package com.client.vote.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class Campaign {
 
@@ -10,6 +11,9 @@ public class Campaign {
     Date startDate;
     Date endDate;
     String status;
+    String rewardInfo;
+    String regionCountry;
+    List<Option> options;
 
     public Campaign(String campaignId, String anchorName, String question, Date startDate, Date endDate, String status) {
         this.campaignId = campaignId;
@@ -68,6 +72,30 @@ public class Campaign {
         this.status = status;
     }
 
+    public String getRewardInfo() {
+        return rewardInfo;
+    }
+
+    public void setRewardInfo(String rewardInfo) {
+        this.rewardInfo = rewardInfo;
+    }
+
+    public String getRegionCountry() {
+        return regionCountry;
+    }
+
+    public void setRegionCountry(String regionCountry) {
+        this.regionCountry = regionCountry;
+    }
+
+    public List<Option> getOptions() {
+        return options;
+    }
+
+    public void setOptions(List<Option> options) {
+        this.options = options;
+    }
+
     @Override
     public String toString() {
         return "Campaign{" +
@@ -77,6 +105,8 @@ public class Campaign {
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", status='" + status + '\'' +
+                ", rewardInfo='" + rewardInfo + '\'' +
+                ", regionCountry='" + regionCountry + '\'' +
                 '}';
     }
 }

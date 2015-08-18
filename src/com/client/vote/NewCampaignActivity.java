@@ -3,6 +3,7 @@ package com.client.vote;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -10,14 +11,23 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 import com.client.vote.common.SimpleHttpClient;
+import com.client.vote.domain.Campaign;
+import com.client.vote.domain.Option;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 public class NewCampaignActivity extends Activity {
 
     String anchorName;
+    String modify = "";
+    Campaign campaign;
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +35,12 @@ public class NewCampaignActivity extends Activity {
         setContentView(R.layout.create_campaign);
         Intent intent = getIntent();
         anchorName = intent.getStringExtra("anchorName");
+        modify = intent.getStringExtra("modify");
+        if (TextUtils.equals(modify, "Y")) {
+            String campaignId = intent.getStringExtra("campaignId");
+            getCampaign(campaignId);
+            //Load objects and make respective fields non editable
+        }
     }
 
     public void submitNewCampaign(View view) {
@@ -76,5 +92,33 @@ public class NewCampaignActivity extends Activity {
         Intent intent = new Intent(this, CampaignSummaryActivity.class);
         intent.putExtra("anchorName", anchorName);
         startActivity(intent);
+    }
+
+    private void getCampaign(String campaignId) {
+        final ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+        postParameters.add(new BasicNameValuePair("campaignId", campaignId));
+        try {
+            String response = SimpleHttpClient.executeHttpPost("/getCampaign", postParameters);
+            Log.i("Response:", response);
+            JSONObject jsonobject = new JSONObject(response);
+            campaign.setCampaignId(jsonobject.getString("campaign_id"));
+            campaign.setQuestion(jsonobject.getString("question"));
+            campaign.setStartDate(sdf.parse(jsonobject.getString("start_date")));
+            campaign.setEndDate(sdf.parse(jsonobject.getString("end_date")));
+            campaign.setStatus(jsonobject.getString("status"));
+            campaign.setRewardInfo(jsonobject.getString("rewardInfo"));
+            campaign.setRegionCountry(jsonobject.getString("regionCountry"));
+            List<Option> options = new ArrayList<Option>();
+            String optionsStr  = jsonobject.getString("options");
+            JSONArray jsonArray = new JSONArray(optionsStr);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject option = jsonArray.getJSONObject(i);
+                options.add(new Option(option.getString("option_id"), option.getString("option_value")));
+            }
+            campaign.setOptions(options);
+            Log.i("campaign name", campaign.toString());
+        } catch (Exception e) {
+            Log.e("register", e.getMessage() + "");
+        }
     }
 }
