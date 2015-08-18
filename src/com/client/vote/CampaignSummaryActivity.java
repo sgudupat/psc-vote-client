@@ -10,8 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.client.vote.CampaignAdapter.ButtonActionListener;
 import com.client.vote.common.SimpleHttpClient;
 import com.client.vote.domain.Campaign;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
@@ -57,6 +60,9 @@ public class CampaignSummaryActivity extends Activity {
             Button csDelete = (Button) findViewById(R.id.cs_deleteBtn);
             Button csReward = (Button) findViewById(R.id.cs_rewardBtn);
             Button csInsight = (Button) findViewById(R.id.cs_insightBtn);
+            
+            csStop.setOnClickListener(new ButtonActionListener( campaignId,"STOPPED"));
+            csDelete.setOnClickListener(new ButtonActionListener( campaignId,"DELETED"));  
 
             csStop.setVisibility(View.VISIBLE);
             csEdit.setVisibility(View.VISIBLE);
@@ -131,6 +137,33 @@ public class CampaignSummaryActivity extends Activity {
         intent.putExtra("anchorName", anchorName);
         intent.putExtra("campaignId", campaignId);
         startActivity(intent);
+    }
+  public class ButtonActionListener implements View.OnClickListener {
+        
+        private String campaignId;
+        private String message;
+
+        public ButtonActionListener( String campaignId,String message) {
+          
+            this.campaignId = campaignId;
+            this.message = message;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Log.i("campaignid",campaignId);
+            final ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+            postParameters.add(new BasicNameValuePair("campaignId",campaignId));
+            postParameters.add(new BasicNameValuePair("status",message));
+           
+            try {
+                String response = SimpleHttpClient.executeHttpPost("/updateCampaignStatus", postParameters);
+                Log.i("Response:", response);
+                
+            } catch (Exception e) {
+                Log.e("register", e.getMessage() + "");
+            }
+        }
     }
 
 }

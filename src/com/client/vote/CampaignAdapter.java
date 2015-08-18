@@ -2,6 +2,7 @@ package com.client.vote;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,10 +10,15 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.TextView;
+
+import com.client.vote.common.SimpleHttpClient;
 import com.client.vote.domain.Campaign;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 
 public class CampaignAdapter extends BaseAdapter implements ListAdapter {
 
@@ -51,15 +57,15 @@ public class CampaignAdapter extends BaseAdapter implements ListAdapter {
         Button ciDelete = (Button) view.findViewById(R.id.ci_deleteBtn);
         Button ciReward = (Button) view.findViewById(R.id.ci_rewardBtn);
         Button ciInsight = (Button) view.findViewById(R.id.ci_insightBtn);
-
+       
         ciStop.setVisibility(View.VISIBLE);
         ciEdit.setVisibility(View.VISIBLE);
         ciDelete.setVisibility(View.VISIBLE);
         ciReward.setVisibility(View.VISIBLE);
         ciInsight.setVisibility(View.VISIBLE);
-
-        Button rewardInfoBtn = (Button) view.findViewById(R.id.ci_rewardBtn);
-        rewardInfoBtn.setOnClickListener(new ShowRewardInfoListener(list.get(position).getAnchorName(), list.get(position).getCampaignId()));
+        ciStop.setOnClickListener(new ButtonActionListener( list.get(position).getCampaignId(),"STOPPED"));
+        ciDelete.setOnClickListener(new ButtonActionListener( list.get(position).getCampaignId(),"DELETED"));       
+        ciReward.setOnClickListener(new ShowRewardInfoListener(list.get(position).getAnchorName(), list.get(position).getCampaignId()));
         return view;
     }
 
@@ -83,6 +89,33 @@ public class CampaignAdapter extends BaseAdapter implements ListAdapter {
             intent.putExtra("anchorName", anchorName);
             intent.putExtra("campaignId", campaignId);
             context.startActivity(intent);
+        }
+    }
+    public class ButtonActionListener implements View.OnClickListener {
+        
+        private String campaignId;
+        private String message;
+
+        public ButtonActionListener( String campaignId,String message) {
+          
+            this.campaignId = campaignId;
+            this.message = message;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Log.i("campaignid",campaignId);
+            final ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+            postParameters.add(new BasicNameValuePair("campaignId",campaignId));
+            postParameters.add(new BasicNameValuePair("status",message));
+           
+            try {
+                String response = SimpleHttpClient.executeHttpPost("/updateCampaignStatus", postParameters);
+                Log.i("Response:", response);
+                
+            } catch (Exception e) {
+                Log.e("register", e.getMessage() + "");
+            }
         }
     }
 }
