@@ -1,6 +1,10 @@
+
+
 package com.client.vote;
 
 import android.app.Activity;
+import android.app.ActivityGroup;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,9 +14,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import com.client.vote.common.CampaignUtil;
 import com.client.vote.common.SimpleHttpClient;
 import com.client.vote.domain.Campaign;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
@@ -23,13 +29,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class CampaignSummaryActivity extends Activity {
+public class CampaignSummaryActivity extends ActivityGroup {
 
     String clientId;
     String anchorName;
     String campaignId;
     List<Campaign> items = new ArrayList<Campaign>();
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    final Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,9 +141,16 @@ public class CampaignSummaryActivity extends Activity {
     }
 
     public void createCampaign(View view) {
-        Intent intent = new Intent(this, NewCampaignActivity.class);
+       /* Intent intent = new Intent(this, NewCampaignActivity.class);
         intent.putExtra("anchorName", anchorName);
-        startActivity(intent);
+        startActivity(intent);*/
+    	  Intent intent = new Intent(this, NewAnchorActivity.class);
+    	  intent.putExtra("anchorName", anchorName);
+          replaceContentView("create_campaign", intent);
+    }
+    public void replaceContentView(String id, Intent newIntent) {
+        View view = ((ActivityGroup) context).getLocalActivityManager().startActivity(id, newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)).getDecorView();
+        ((Activity) context).setContentView(view);
     }
 
     public void showRewardInfo(View view) {
@@ -144,8 +158,10 @@ public class CampaignSummaryActivity extends Activity {
         Intent intent = new Intent(this, RewardActivity.class);
         intent.putExtra("anchorName", anchorName);
         intent.putExtra("campaignId", campaignId);
-        startActivity(intent);
+        //startActivity(intent);
+        replaceContentView("create_campaign", intent);
     }
+  
 
     public void modifyCampaign(View view) {
         Intent intent = new Intent(this, NewCampaignActivity.class);
