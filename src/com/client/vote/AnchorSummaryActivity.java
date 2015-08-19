@@ -1,6 +1,8 @@
 package com.client.vote;
 
 import android.app.Activity;
+import android.app.ActivityGroup;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -18,11 +20,12 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-public class AnchorSummaryActivity extends Activity {
+public class AnchorSummaryActivity extends ActivityGroup {
 
     ArrayList<Anchor> items = new ArrayList<Anchor>();
     String clientId;
 
+    final Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +81,11 @@ public class AnchorSummaryActivity extends Activity {
 
     public void newAnchor(View view) {
         Intent intent = new Intent(this, NewAnchorActivity.class);
-        startActivity(intent);
+        replaceContentView("anchor_item", intent);
+    }
+
+    public void replaceContentView(String id, Intent newIntent) {
+        View view = ((ActivityGroup) context).getLocalActivityManager().startActivity(id, newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)).getDecorView();
+        ((Activity) context).setContentView(view);
     }
 }

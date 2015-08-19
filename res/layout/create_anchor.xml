@@ -5,23 +5,11 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical" tools:context=".NewAnchorActivity">
 
-    <TextView
-            android:id="@+id/newAnchor1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="16dp"
-            android:text="Create New Anchor"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-    <TextView
+        <TextView
             android:id="@+id/newAnchor2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/newAnchor1"
             android:layout_marginTop="65dp"
             android:text="Anchor Name"/>
 

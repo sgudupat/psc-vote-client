@@ -69,7 +69,7 @@ public class NewAnchorActivity extends Activity {
             String response = SimpleHttpClient.executeHttpPost("/createAnchor", postParameters);
             Log.i("Response:", response);
             if (response.contains("success")) {
-                Intent intent = new Intent(this, AnchorSummaryActivity.class);
+                Intent intent = new Intent(this, SignTabActivity.class);
                 startActivity(intent);
             } else {
                 Toast.makeText(getApplicationContext(), "Creation Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
