@@ -27,6 +27,7 @@ public class RegretActivity extends Activity {
         Intent intent = new Intent(this, HomePageActivity.class);
         startActivity(intent);
     }
+    
 
     public void regretInfo() {
         EditText regretInformation = (EditText) findViewById(R.id.regretedit1);
