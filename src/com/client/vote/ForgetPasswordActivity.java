@@ -39,11 +39,7 @@ public class ForgetPasswordActivity extends Activity {
         Intent intent = new Intent(this, HomePageActivity.class);
         startActivity(intent);
     }
-    public void regret(View view){
-    	Intent intent = new Intent(this,RegretActivity.class);
-    	startActivity(intent);
-    }
-
+   
     public void resetPassword(View view) {
 
         final EditText name = (EditText) findViewById(R.id.forgetEdit1);
