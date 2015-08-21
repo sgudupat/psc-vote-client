@@ -24,6 +24,6 @@
         <activity android:name=".NewAnchorActivity" android:label="@string/new_anchor"/>
         <activity android:name=".NewCampaignActivity" android:label="@string/new_campaign"/>
         <activity android:name=".RewardActivity" android:label="@string/new_reward"/>
-         <activity android:name="org.achartengine.GraphicalActivity"/>
+
     </application>
 </manifest>
