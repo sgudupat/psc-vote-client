@@ -59,15 +59,12 @@ public class ProfileActivity extends Activity {
             }
         }
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, countries);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, countries);
         // set the view for the Drop down list
-        dataAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // set the ArrayAdapter to the spinner
         country1.setAdapter(dataAdapter);
         country1.setSelection(i);
-
 
         customerNameField.setText(clientName);
         urlField.setText(websiteURL);
@@ -147,5 +144,11 @@ public class ProfileActivity extends Activity {
                 if (checked)
                     break;
         }
+    }
+
+
+    public void cancelProfileUpdate(View view) {
+        Intent intent = new Intent(this, SignTabActivity.class);
+        startActivity(intent);
     }
 }

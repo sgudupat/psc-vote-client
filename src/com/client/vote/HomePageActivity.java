@@ -53,27 +53,16 @@ public class HomePageActivity extends Activity {
                 JSONObject jsonobject = new JSONObject(response);
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
                 SharedPreferences.Editor editor = prefs.edit();
-                Log.i("Step 1", "");
                 editor.putString("clientId", jsonobject.getString("client_id"));
-                Log.i("Step 2", "");
                 editor.putString("clientName", jsonobject.getString("client_name"));
-                Log.i("Step 3", "");
                 editor.putString("emailAddress", jsonobject.getString("email_address"));
-                Log.i("Step 4", "");
                 editor.putString("websiteURL", jsonobject.getString("website_url"));
-                Log.i("Step 5", "");
                 editor.putString("about", jsonobject.getString("about"));
-                Log.i("Step 6", "");
                 editor.putString("country", jsonobject.getString("country"));
-                Log.i("Step 7", "");
                 editor.commit();
-                Log.i("Step 8", "");
                 Intent intent = new Intent(context, SignTabActivity.class);
-                Log.i("Step 9", "");
                 startActivity(intent);
-                Log.i("Step 10", "");
                 progress.dismiss();
-                Log.i("Step 11", "");
             } catch (Exception e) {
                 Log.e("LoginPageActivity", e.getMessage() + "");
                 Toast.makeText(getApplicationContext(), "Login Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
