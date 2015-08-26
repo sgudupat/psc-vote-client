@@ -1,5 +1,3 @@
-
-
 package com.client.vote;
 
 import android.app.Activity;
@@ -14,11 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.client.vote.common.CampaignUtil;
 import com.client.vote.common.SimpleHttpClient;
 import com.client.vote.domain.Campaign;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
@@ -31,12 +27,12 @@ import java.util.List;
 
 public class CampaignSummaryActivity extends ActivityGroup {
 
+    final Context context = this;
     String clientId;
     String anchorName;
     String campaignId;
     List<Campaign> items = new ArrayList<Campaign>();
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-    final Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,13 +137,16 @@ public class CampaignSummaryActivity extends ActivityGroup {
     }
 
     public void createCampaign(View view) {
-       /* Intent intent = new Intent(this, NewCampaignActivity.class);
+        Intent intent = new Intent(this, NewCampaignActivity.class);
         intent.putExtra("anchorName", anchorName);
-        startActivity(intent);*/
-    	  Intent intent = new Intent(this, NewAnchorActivity.class);
+        startActivity(intent);
+/*
+          Intent intent = new Intent(this, NewAnchorActivity.class);
     	  intent.putExtra("anchorName", anchorName);
           replaceContentView("create_campaign", intent);
+*/
     }
+
     public void replaceContentView(String id, Intent newIntent) {
         View view = ((ActivityGroup) context).getLocalActivityManager().startActivity(id, newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)).getDecorView();
         ((Activity) context).setContentView(view);
@@ -161,7 +160,7 @@ public class CampaignSummaryActivity extends ActivityGroup {
         //startActivity(intent);
         replaceContentView("create_campaign", intent);
     }
-  
+
 
     public void modifyCampaign(View view) {
         Intent intent = new Intent(this, NewCampaignActivity.class);

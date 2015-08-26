@@ -1,5 +1,3 @@
-
-
 package com.client.vote;
 
 import android.app.Activity;
@@ -14,10 +12,8 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.TextView;
-
 import com.client.vote.common.SimpleHttpClient;
 import com.client.vote.domain.Anchor;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
@@ -99,15 +95,15 @@ public class AnchorAdapter extends BaseAdapter implements ListAdapter {
           /*  Intent intent = new Intent(context, CampaignSummaryActivity.class);
            
             context.startActivity(intent);*/
-        	  Intent intent = new Intent(context, CampaignSummaryActivity.class);
-        	  intent.putExtra("anchorName", anchorName);
-              replaceContentView("campaign_summary", intent);
+            Intent intent = new Intent(context, CampaignSummaryActivity.class);
+            intent.putExtra("anchorName", anchorName);
+            replaceContentView("campaign_summary", intent);
         }
 
-		 public void replaceContentView(String id, Intent newIntent) {
-        View view = ((ActivityGroup) context).getLocalActivityManager().startActivity(id, newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)).getDecorView();
-        ((Activity) context).setContentView(view);
-    }
+        public void replaceContentView(String id, Intent newIntent) {
+            View view = ((ActivityGroup) context).getLocalActivityManager().startActivity(id, newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)).getDecorView();
+            ((Activity) context).setContentView(view);
+        }
 
     }
 }

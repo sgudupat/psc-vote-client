@@ -22,10 +22,10 @@ import java.util.ArrayList;
 
 public class AnchorSummaryActivity extends ActivityGroup {
 
+    final Context context = this;
     ArrayList<Anchor> items = new ArrayList<Anchor>();
     String clientId;
 
-    final Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
