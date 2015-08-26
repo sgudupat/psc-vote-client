@@ -21,7 +21,7 @@ import java.util.Locale;
 public class ProfileActivity extends Activity {
 
     String clientId;
-    String countries;
+    String country;
 
     int i = 0;
 
@@ -31,11 +31,10 @@ public class ProfileActivity extends Activity {
         setContentView(R.layout.customer_profile);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         clientId = preferences.getString("clientId", "");
-        countries = preferences.getString("countries", "");
         String clientName = preferences.getString("clientName", "");
         String websiteURL = preferences.getString("websiteURL", "");
         String about = preferences.getString("about", "");
-        String country = preferences.getString("country", "");
+        country = preferences.getString("country", "");
 
         EditText customerNameField = (EditText) findViewById(R.id.cp_client_name);
         EditText urlField = (EditText) findViewById(R.id.cp_websiteURL);
