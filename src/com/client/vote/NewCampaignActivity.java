@@ -1,6 +1,8 @@
 package com.client.vote;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -149,15 +151,41 @@ public class NewCampaignActivity extends Activity {
                     intent.putExtra("anchorName", anchorName);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Creation Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
+                    showAlert(response);
                 }
             } catch (Exception e) {
                 Log.e("createAnchor", e.getMessage() + "");
-                Toast.makeText(getApplicationContext(), "Creation Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
+                showAlert("Creation Failed, Please Retry !!!");
             }
         }
     }
 
+    private void showAlert(String message) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(NewCampaignActivity.this);
+        // Setting Dialog Title
+        alertDialog.setTitle("Error");
+        // Setting Dialog Message
+        alertDialog.setMessage(message);
+        // Setting Icon to Dialog
+        //  alertDialog.setIcon(R.drawable.dialog_icon);
+        // Setting Positive "Yes" Button
+/*        alertDialog.setPositiveButton("Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });*/
+        // Setting Negative "NO" Button
+        alertDialog.setNegativeButton("Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Write your code here to invoke NO event
+                        dialog.cancel();
+                    }
+                });
+        // Showing Alert Message
+        alertDialog.show();
+    }
     public void showCampaignSummary(View view) {
         Intent intent = new Intent(this, CampaignSummaryActivity.class);
         intent.putExtra("anchorName", anchorName);

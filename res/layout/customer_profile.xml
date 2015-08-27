@@ -93,7 +93,7 @@
     <Spinner
             android:id="@+id/spinner1"
             android:layout_width="25dip"
-            android:layout_height="25dip"
+            android:layout_height="50dip"
             android:layout_alignRight="@+id/cp_websiteURL"
             android:layout_alignTop="@+id/textView7"
             android:layout_toEndOf="@+id/textView6"/>
@@ -160,6 +160,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/cp_client_name"
-            android:text="@string/profile_back"/>
+            android:text="@string/profile_back" android:onClick="cancelProfileUpdate"/>
 
 </RelativeLayout>

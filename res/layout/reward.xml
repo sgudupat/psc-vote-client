@@ -64,14 +64,14 @@
                             android:id="@+id/rwd_pushRegion1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Global"/>
+                            android:text="Global" android:hint="Global"/>
 
                     <RadioButton
                             android:id="@+id/rwd_pushRegion2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
-                            android:text="Client Country"/>
+                            android:text="Client Country" android:hint="CC"/>
                 </RadioGroup>
             </LinearLayout>
             <LinearLayout
@@ -93,13 +93,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
-                            android:text="To Respondents Only"/>
+                            android:text="To Respondents Only" android:hint="RESPONDENTS"/>
 
                     <RadioButton
                             android:id="@+id/rwd_pushFilter2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="All App Users"/>
+                            android:text="All App Users" android:hint="ALL"/>
                 </RadioGroup>
             </LinearLayout>
             <TextView

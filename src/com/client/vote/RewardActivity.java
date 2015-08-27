@@ -9,12 +9,14 @@ import org.apache.http.message.BasicNameValuePair;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
@@ -189,10 +191,10 @@ public class RewardActivity extends Activity {
 
     public void createReward(View view) {
         final EditText pushValue = (EditText) findViewById(R.id.rwd_pushLimitValue);
-        RadioGroup rg = (RadioGroup) findViewById(R.id.rwd_pushRegionGrp);
-        RadioButton rb = (RadioButton) findViewById(rg.getCheckedRadioButtonId());
-        RadioGroup rg2 = (RadioGroup) findViewById(R.id.rwd_pushFilterGrp);
-        RadioButton rb2 = (RadioButton) findViewById(rg2.getCheckedRadioButtonId());
+        RadioGroup rgRegion = (RadioGroup) findViewById(R.id.rwd_pushRegionGrp);
+        RadioButton rbRegion = (RadioButton) findViewById(rgRegion.getCheckedRadioButtonId());
+        RadioGroup rgFilter = (RadioGroup) findViewById(R.id.rwd_pushFilterGrp);
+        RadioButton rbFilter = (RadioButton) findViewById(rgFilter.getCheckedRadioButtonId());
         final EditText rewardDetail = (EditText) findViewById(R.id.reward_scrollView1);
         final EditText fromDate = (EditText) findViewById(R.id.rwd_validityFrom);
         final EditText toDate = (EditText) findViewById(R.id.rwd_validityTo);
@@ -200,13 +202,24 @@ public class RewardActivity extends Activity {
         // fetch value from key-value pair and make it visible on TextView.
         String campaignId = intent.getStringExtra("campaignId");
         Log.i("campaignId::", campaignId);
+        String region = rbRegion.getHint().toString();
+        Log.i("region::", region);
+        if (region.equalsIgnoreCase("CC")) {
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+            region = preferences.getString("country", "");
+            Log.i("region:value:", region);
+            if (region == null || region.equals("") || region.equals("null")) {
+                Intent profileIntent = new Intent(this, ProfileActivity.class);
+                startActivity(profileIntent);
+            }
+        }
         final ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
         postParameters.add(new BasicNameValuePair("campaignId", campaignId));
         postParameters.add(new BasicNameValuePair("rewardDescription", rewardDetail.getText().toString()));
         postParameters.add(new BasicNameValuePair("imageURL", "http://52.74.246.67:8080/vote/images/one.jpg"));
-        postParameters.add(new BasicNameValuePair("pushRegion", rb.getText().toString()));
+        postParameters.add(new BasicNameValuePair("pushRegion", region));
         postParameters.add(new BasicNameValuePair("pushLimit", pushValue.getText().toString()));
-        postParameters.add(new BasicNameValuePair("pushFilter", rb2.getText().toString()));
+        postParameters.add(new BasicNameValuePair("pushFilter", rbFilter.getHint().toString()));
         postParameters.add(new BasicNameValuePair("startDate", fromDate.getText().toString()));
         postParameters.add(new BasicNameValuePair("endDate", toDate.getText().toString()));
         try {
