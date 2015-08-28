@@ -47,6 +47,9 @@ public class RewardActivity extends Activity {
         super.onCreate(savedInstanceState);
         Log.i("RewardActivity", "inside rewards page");
         setContentView(R.layout.reward);
+        prgDialog = new ProgressDialog(this);
+        // Set Cancelable as False
+        prgDialog.setCancelable(false);
         Intent intent = getIntent();
         anchorName = intent.getStringExtra("anchorName");
     }
@@ -72,16 +75,23 @@ public class RewardActivity extends Activity {
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgPath = cursor.getString(columnIndex);
                 cursor.close();
+               
                 ImageView imgView = (ImageView) findViewById(R.id.reward_imageView1);
                 // Set the Image in ImageView
                 imgView.setImageBitmap(BitmapFactory.decodeFile(imgPath));
-                uploadImages();
+           
+                String fileNameSegments[] = imgPath.split("/");
+                fileName = fileNameSegments[fileNameSegments.length - 1];
+                Log.i("imageview filename ", fileName );
+                // Put file name in Async Http Post Param which will used in jsp web app
+                params.put("filename", fileName);
                 // Get the Image's file name
             } else {
                 Toast.makeText(this, "You haven't picked Image", Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
+        	//Log.i("exception",e.getMessage());
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
     // When Upload button is clicked
@@ -142,10 +152,10 @@ public class RewardActivity extends Activity {
  
     // Make Http call to upload Image to Php server
     public void makeHTTPCall() {
-        prgDialog.setMessage("Invoking jsp");        
+      /*  prgDialog.setMessage("uploading image to server");        
         AsyncHttpClient client = new AsyncHttpClient();
         // Don't forget to change the IP address to your LAN address. Port no as well.
-        client.post("http://192.168.40.1:8083/upload.jsp",
+        client.post("http://52.74.246.67:8080/upload.jsp",
                 params, new AsyncHttpResponseHandler() {
                     // When the response returned by REST has Http
                     // response code '200'
@@ -153,8 +163,7 @@ public class RewardActivity extends Activity {
                     public void onSuccess(String response) {
                         // Hide Progress Dialog
                         prgDialog.hide();
-                        Toast.makeText(getApplicationContext(), response,
-                                Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(), response,Toast.LENGTH_LONG).show();
                     }
  
                     // When the response returned by REST has Http
@@ -186,10 +195,24 @@ public class RewardActivity extends Activity {
                                     .show();
                         }
                     }
-                });
+                });*/
+    	
+    	 final ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+         postParameters.add(new BasicNameValuePair("image", encodedString));
+         postParameters.add(new BasicNameValuePair( "filename", fileName));
+        
+         try {
+             String response = SimpleHttpClient.executeHttpPost("/uploadImage", postParameters);
+             Log.i("Response:", response);
+            
+         } catch (Exception e) {
+             Log.i("Response 2:Error:", e.getMessage());
+             Toast.makeText(getApplicationContext(), "Reward creation failed", Toast.LENGTH_LONG).show();
+         }
     }
 
     public void createReward(View view) {
+    	uploadImages();
         final EditText pushValue = (EditText) findViewById(R.id.rwd_pushLimitValue);
         RadioGroup rgRegion = (RadioGroup) findViewById(R.id.rwd_pushRegionGrp);
         RadioButton rbRegion = (RadioButton) findViewById(rgRegion.getCheckedRadioButtonId());
