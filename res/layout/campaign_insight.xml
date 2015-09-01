@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/insight_companydetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Campaign Details" />
+
+    <TextView
+        android:id="@+id/insight_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/insight_companydetails"
+        android:layout_marginTop="15dp"
+        android:text="Question" />
+
+    <TextView
+        android:id="@+id/insight_trends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/insight_question"
+        android:layout_marginTop="17dp"
+        android:text="Trends" />
+
+    <LinearLayout
+        android:id="@+id/Barchart"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/insight_trends"
+        android:layout_marginTop="14dp"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+    
+
+    <RelativeLayout
+        android:id="@+id/anchor_age"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Barchart"
+        android:layout_marginTop="24dp" >
+
+        <TextView
+            android:id="@+id/insight_agechart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Age Wise Breakup" />
+
+        <TextView
+            android:id="@+id/insight_ageshow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/insight_agechart"
+            android:layout_alignBottom="@+id/insight_agechart"
+            android:layout_marginLeft="68dp"
+            android:layout_toRightOf="@+id/insight_agechart"
+            android:text="Show/Hide" />
+
+          <LinearLayout
+              android:id="@+id/insightpiechart_age"
+              android:layout_width="match_parent"
+              android:layout_height="25dp"
+              android:layout_alignParentBottom="true"
+              android:layout_alignParentLeft="true"
+              android:orientation="vertical" >
+          </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/anchor_region"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/anchor_age"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/insight_region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Region Wise Breakup" />
+
+        <TextView
+            android:id="@+id/insight_regionshow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/insight_region"
+            android:layout_alignBottom="@+id/insight_region"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/insight_region"
+            android:text="Show/Hide" />
+         <LinearLayout
+              android:id="@+id/insightbarchart_region"
+              android:layout_width="match_parent"
+              android:layout_height="25dp"
+              android:layout_alignParentBottom="true"
+              android:layout_alignParentLeft="true"
+              android:orientation="vertical" >
+          </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
