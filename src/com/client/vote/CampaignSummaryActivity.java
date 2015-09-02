@@ -98,6 +98,10 @@ public class CampaignSummaryActivity extends ActivityGroup {
         }
 
     }
+    public void showInsightInfo(View view){
+    	Intent intent = new Intent (this,CampaignInsightActivity.class);
+    	 replaceContentView("create_campaign", intent);
+    }
 
     private String fetchCampaignInfo(String clientId, String anchorName) {
         Log.i("fetchCampaignInfo:", "fetchCampaignInfo");

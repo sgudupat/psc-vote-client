@@ -3,6 +3,7 @@
 
     <string name="app_name">vote_client</string>
     <string name="sign_up">Register</string>
+    <string name="campaign_insight">Campaign Insight</string>
     <string name="cancel">Regret</string>
     <string name="forget_password">Forget Password</string>
     <string name="new_anchor">New Anchor</string>

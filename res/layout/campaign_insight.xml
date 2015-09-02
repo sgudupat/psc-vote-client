@@ -39,26 +39,16 @@
         android:layout_below="@+id/insight_trends"
         android:layout_marginTop="14dp"
         android:orientation="vertical" >
-
     </LinearLayout>
-    
 
     <RelativeLayout
         android:id="@+id/anchor_age"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="150dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/Barchart"
         android:layout_marginTop="24dp" >
-
-        <TextView
-            android:id="@+id/insight_agechart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="Age Wise Breakup" />
 
         <TextView
             android:id="@+id/insight_ageshow"
@@ -68,52 +58,26 @@
             android:layout_alignBottom="@+id/insight_agechart"
             android:layout_marginLeft="68dp"
             android:layout_toRightOf="@+id/insight_agechart"
+            android:onClick="toggle_contentsage"
             android:text="Show/Hide" />
 
-          <LinearLayout
-              android:id="@+id/insightpiechart_age"
-              android:layout_width="match_parent"
-              android:layout_height="25dp"
-              android:layout_alignParentBottom="true"
-              android:layout_alignParentLeft="true"
-              android:orientation="vertical" >
-          </LinearLayout>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/anchor_region"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/anchor_age"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/insight_region"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:id="@+id/insightpiechart_age"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="Region Wise Breakup" />
+            android:orientation="vertical"
+            android:visibility="visible" >
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/insight_regionshow"
+            android:id="@+id/insight_agechart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/insight_region"
-            android:layout_alignBottom="@+id/insight_region"
-            android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/insight_region"
-            android:text="Show/Hide" />
-         <LinearLayout
-              android:id="@+id/insightbarchart_region"
-              android:layout_width="match_parent"
-              android:layout_height="25dp"
-              android:layout_alignParentBottom="true"
-              android:layout_alignParentLeft="true"
-              android:orientation="vertical" >
-          </LinearLayout>
+            android:layout_above="@+id/insightpiechart_age"
+            android:layout_alignParentLeft="true"
+            android:text="Age Wise Breakup" />
     </RelativeLayout>
 
     <TextView
@@ -124,5 +88,44 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="72dp"
         android:text="Show/hide" />
+
+    <RelativeLayout
+        android:id="@+id/anchor_region"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/anchor_age"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/insight_region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="Region Wise Breakup" />
+
+        <TextView
+            android:id="@+id/insight_regionshow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/insight_region"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="53dp"
+            android:layout_toRightOf="@+id/insight_region"
+            android:onClick="toggle_contentsregion"
+            android:text="Show/Hide" />
+
+         <LinearLayout
+             android:id="@+id/insightregionchart"
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+             android:layout_alignParentLeft="true"
+             android:layout_below="@+id/insight_region"
+             android:orientation="vertical"
+             android:visibility="visible" >
+         </LinearLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>
