@@ -22,7 +22,7 @@ public class SimpleHttpClient {
      * The time it takes for our client to timeout
      */
     public static final int HTTP_TIMEOUT = 30 * 1000; // milliseconds
-    private static String serverURL = "http://52.74.246.67:8080/vote";
+    private static String serverURL = "http://52.76.83.72:8080/vote";
 
     /**
      * Single instance of our HttpClient

@@ -94,7 +94,7 @@ public class ForgetPasswordActivity extends Activity {
 
             if (response.contains("success")) {
                 Log.i("email sending", "email sending");
-                String link = "http://52.74.246.67:8080/vote/forgotPassword.jsp?key="
+                String link = "http://52.76.83.72:8080/vote/forgotPassword.jsp?key="
                         + value;
                 Log.i("password link", link);
                 new LongRunningGetIO(email.getText().toString(), link)
