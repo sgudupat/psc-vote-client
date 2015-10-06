@@ -3,7 +3,6 @@ package com.client.vote;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -14,14 +13,12 @@ public class GraphActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.graphview);
-        lc = (LinearLayout) findViewById(R.id.chart);
-        Log.i("lc", "linear layout view");
+        lc = (LinearLayout) findViewById(R.id.chart);       
         lc.setVisibility(View.GONE);
 
     }
 
-    public void toggle_contents(View v) {
-        Log.i("toggle function", "inside toggle view");
+    public void toggle_contents(View v) {        
         lc.setVisibility(lc.isShown()
                 ? View.GONE
                 : View.VISIBLE);

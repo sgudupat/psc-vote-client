@@ -113,7 +113,8 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView8"
             android:layout_toRightOf="@+id/textView4"
-            android:text="@string/edit_website" android:layout_alignEnd="@+id/detailAreaScroller"/>
+            android:text="@string/edit_website" 
+             android:inputType="textEmailAddress" android:layout_alignEnd="@+id/detailAreaScroller"/>
 
     <TextView
             android:id="@+id/textView9"
@@ -160,6 +161,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/cp_client_name"
-            android:text="@string/profile_back" android:onClick="cancelProfileUpdate"/>
+            android:text="@string/profile_back"
+            android:onClick="previous"
+             />
 
 </RelativeLayout>
